@@ -85,7 +85,7 @@ input.input{background:#0008;border:2px solid #3a6a45;border-radius:10px;padding
 <div class="modal on" id="mMain">
 <div class="box" style="max-width:520px;text-align:center">
 <h1 style="font-size:28px;color:#ffd54f">COMPETATION OF PPTUQI</h1>
-<p style="font-size:10px;opacity:.8;margin:6px 0;color:#aaffaa">UPDATE LENGKAP: Global Fix, Healer Nembak Hati Serang, Sync Musuh, Guard & Tower serang NPC/Player, Kotak Gelap Bangunan, Panah ke Kastil!</p>
+<p style="font-size:10px;opacity:.8;margin:6px 0;color:#aaffaa">UPDATE NEW: Fix Tower, Sync Musuh, Fix Healer, Fix Panah Kastil, Box Gelap Bangunan</p>
 <input id="playerName" class="input" placeholder="Nama Player..." maxlength="12" value="Player">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
 <div class="factionBtn human sel" id="facHuman" onclick="pickFaction('human')"><div style="font-size:26px">⚔🏰🌲</div><b>HUMAN</b><br><small>800,2000 - Guard aktif - Fix balik room</small></div>
@@ -101,7 +101,6 @@ input.input{background:#0008;border:2px solid #3a6a45;border-radius:10px;padding
 <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap"><button class="btn big gold" onclick="hostRoom()">🏠 HOST</button><button class="btn big gold" style="background:#1a5a8a;border-color:#3a8ac6" onclick="joinGlobalServer()">🌐 GLOBAL 20P FIXED</button><button class="btn big" onclick="refreshRooms()">🔄 Refresh</button></div>
 <div style="display:flex;gap:6px;margin-bottom:10px"><input id="joinCode" class="input" placeholder="Kode Room" style="flex:1"><button class="btn big" onclick="joinByCode()">JOIN</button></div>
 <div id="roomListBody" style="display:flex;flex-direction:column;gap:8px;max-height:340px;overflow:auto"></div>
-<p style="font-size:9px;opacity:.6;margin-top:8px">UPDATENYA: 1) Global masuk lancar + Fallback & ID aman 2) Healer ❤️ bisa serang musuh (jarak jauh seperti mage) & heal teman 3) Sinkronisasi musuh real-time antar perangkat 4) Guard & Tower menyerang musuh NPC & player lawan 5) Kotak gelap kecil di setiap bangunan agar tulisan & ikon jelas 6) Panah/proyektil bisa menyerang kastil musuh 7) Visibility player baru teratasi sempurna.</p>
 </div>
 </div>
 <div class="modal" id="mLobby">
@@ -110,7 +109,7 @@ input.input{background:#0008;border:2px solid #3a6a45;border-radius:10px;padding
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px">
 <div><b>Pemain (<span id="lobbyPlayerCount">0</span>) - Fix visibility</b><div id="lobbyPlayers" style="display:flex;flex-direction:column;gap:6px;margin-top:6px;max-height:340px;overflow:auto"></div></div>
 <div>
-<div class="card" style="cursor:default;font-size:10px">✅ UPDATE FIX TERBARU:<br>• Global server koneksi stabil (FIXED)<br>• Healer tembak hati serang + heal (FIXED)<br>• Posisi musuh sinkron antar device (FIXED)<br>• Guard & Tower serang NPC/Player (FIXED)<br>• Kotak gelap kontras di bangunan (FIXED)<br>• Kastil bisa diserang panah (FIXED)<br>• Player baru langsung kelihatan (FIXED)<br>• Naga OP 6000 HP 3 skill random tetap aktif</div>
+<div class="card" style="cursor:default;font-size:10px">✅ FITUR BARU & FIX:<br>• Tower menembak player & musuh NPC<br>• Sinkronisasi posisi musuh (sama semua perangkat)<br>• Guard menyerang monster NPC<br>• Box gelap di bangunan agar jelas<br>• Panah & serangan mengenai Kastil musuh<br>• Healer dapat menyerang musuh dengan Hati</div>
 <div style="margin-top:8px;display:flex;flex-direction:column;gap:6px">
 <button class="btn big gold" id="btnStartGame" onclick="hostStartGame()" style="display:none">🚀 MULAI</button>
 <button class="btn big" id="btnReady" onclick="toggleReady()">✅ READY</button>
@@ -121,7 +120,7 @@ input.input{background:#0008;border:2px solid #3a6a45;border-radius:10px;padding
 </div>
 </div>
 <div class="modal" id="mBuild"><div class="box"><h2 id="buildTitle">Bangunan</h2><div id="buildBody"></div><br><button class="btn" onclick="closeM('build')">Tutup</button></div></div>
-<div class="modal" id="mInv"><div class="box"><h2>🎒 Inventory <button class="btn" onclick="closeM('inv')">X</button></h2><div id="invBody">Gold: <span id="invGold">0</span><br>Kills: <span id="invKills">0</span><br><br><div class="card">Pembaruan & Perbaikan Aktif:<br>1. Global connection error diperbaiki dengan fallback ID otomatis.<br>2. Healer menembakkan ❤️ untuk menyerang musuh (jarak jauh ala Mage) sekaligus menyembuhkan teman.<br>3. Posisi musuh NPC disinkronkan dari host ke semua client.<br>4. Guard dan Tower kini menyerang player musuh dan NPC musuh.<br>5. Kotak gelap kontras ditambahkan di setiap bangunan agar terlihat sangat jelas.<br>6. Panah/proyektil kini memberikan damage pada kastil musuh.<br>7. Player baru yang masuk langsung terlihat oleh player lama.</div></div></div></div>
+<div class="modal" id="mInv"><div class="box"><h2>🎒 Inventory <button class="btn" onclick="closeM('inv')">X</button></h2><div id="invBody">Gold: <span id="invGold">0</span><br>Kills: <span id="invKills">0</span></div></div></div>
 <div id="msg"><div id="msgTxt"></div><br><button class="btn" onclick="hideMsg()">OK</button></div>
 <div id="gameOver"><h1 id="goTitle">GAME OVER</h1><p id="gameOverTxt"></p><div id="scoreBoard" style="background:#ffffff0f;border-radius:12px;padding:12px;max-width:480px;width:100%;max-height:300px;overflow:auto"></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn big gold" onclick="returnToLobby()">🏟 Lobby</button><button class="btn big danger" onclick="leaveServer()">🚪 Keluar FIXED</button><button class="btn big" onclick="restartLocal()">🔄 Main Lagi</button></div></div>
 </div>
@@ -140,13 +139,13 @@ const CLASS_DATA={
   tank:{name:'Tank',emoji:'🛡️',hp:220,mp:70,atk:18,def:20,range:80,speed:3.0,skill:'Titan Yellow Explosion',desc:'Lambat ledakan KUNING 280'},
   archer:{name:'Archer',emoji:'🏹',hp:110,mp:110,atk:36,def:5,range:320,speed:7.2,skill:'Death Arrow',desc:'Pierce 5x'},
   assassin:{name:'Assassin',emoji:'🗡️',hp:100,mp:130,atk:46,def:4,range:80,speed:8.4,skill:'Shadow Dash',desc:'DASH 95 saat ATK'},
-  healer:{name:'Healer',emoji:'💚',hp:120,mp:210,atk:22,def:6,range:380,speed:6.4,skill:'Holy Light',desc:'Tembak HATI ❤️ serang & heal'}
+  healer:{name:'Healer',emoji:'💚',hp:120,mp:210,atk:22,def:6,range:380,speed:6.4,skill:'Holy Light',desc:'HATI ❤️ heal teman & serang musuh'}
 };
 
 let playerFaction='human', playerName='Player', playerClass='knight';
 let net={peer:null,isHost:false,roomCode:null,connToHost:null,conns:[],myId:null,lobbyPlayers:{},ready:{},started:false,chatLog:[],lastSeen:{}};
 let globalMode=false;
-let isLeaving=false;
+let isLeaving=false; 
 
 function genRoomCode(){return Math.random().toString(36).substring(2,5).toUpperCase();}
 function saveRoomRegistry(code,info){
@@ -167,9 +166,9 @@ function refreshRooms(){
   document.getElementById('roomCount').textContent=list.length+' room';
   body.innerHTML=list.map(r=>{
     if(r.code==='GLOBAL' || r.isOfficial){
-      return `<div class="roomItem" style="border:2px solid #3a8ac6;background:linear-gradient(90deg,#1a3a5a44,#2a5a8a44)"><div><b>🌐 GLOBAL FIXED</b> - ${r.hostName} <span class="chip" style="background:#1a5a8a">♾️ 20P STABLE</span><br><small>Masuk global lancar + sync musuh & tower aktif</small></div><button class="btn gold" style="background:#1a5a8a;border-color:#3a8ac6" onclick="joinGlobalServer()">JOIN GLOBAL</button></div>`;
+      return `<div class="roomItem" style="border:2px solid #3a8ac6;background:linear-gradient(90deg,#1a3a5a44,#2a5a8a44)"><div><b>🌐 GLOBAL FIXED</b> - ${r.hostName} <span class="chip" style="background:#1a5a8a">♾️ 20P VISIBILITY FIXED</span><br><small>Player lama bisa lihat player baru + offline auto hilang + HP joystick fleksibel</small></div><button class="btn gold" style="background:#1a5a8a;border-color:#3a8ac6" onclick="joinGlobalServer()">JOIN GLOBAL</button></div>`;
     }
-    return `<div class="roomItem"><div><b>🏠 ${r.code}</b> - ${r.hostName} <span class="chip">${r.faction==='demon'?'😈 Demon':'⚔ Human'}</span><br><small>${r.players} pemain • ${r.started?'🟢 Mulai':'🟡 Lobby'} • Fix tidak balik lagi</small></div><button class="btn gold" onclick="joinRoomCode('${r.code}')">JOIN</button></div>`;
+    return `<div class="roomItem"><div><b>🏠 ${r.code}</b> - ${r.hostName} <span class="chip">${r.faction==='demon'?'😈 Demon':'⚔ Human'}</span><br><small>${r.players} pemain • ${r.started?'🟢 Sudah mulai':'🟡 Lobby'} • Fix tidak balik lagi</small></div><button class="btn gold" onclick="joinRoomCode('${r.code}')">JOIN</button></div>`;
   }).join('');
 }
 
@@ -184,12 +183,21 @@ function removePlayerFromRoom(playerId, reason){
   net.conns=net.conns.filter(c=>{ try{ if(c.peer===playerId) { try{c.close();}catch(e){} return false; } return true; }catch(e){ return true; } });
 
   if(wasHost){
-    let remaining=Object.keys(net.lobbyPlayers);
-    if(remaining.length>0){
-      let newHostId=remaining[0];
-      net.lobbyPlayers[newHostId].isHost=true;
-      if(newHostId===net.myId){ net.isHost=true; document.getElementById('btnStartGame').style.display='block'; showMsg('👑 Host offline - kamu jadi host baru!'); saveRoomRegistry(net.roomCode,{name:playerName,isOfficial:false}); }
-      broadcast({t:'hostMigrated',newHostId:newHostId});
+    if(globalMode){
+      let remaining=Object.keys(net.lobbyPlayers);
+      if(remaining.length>0){
+        let newHostId=remaining[0];
+        net.lobbyPlayers[newHostId].isHost=true;
+        if(newHostId===net.myId){ net.isHost=true; document.getElementById('btnStartGame').style.display='block'; showMsg('👑 Host offline - kamu jadi host baru!'); saveRoomRegistry(net.roomCode,{name:playerName,isOfficial:false}); }
+        broadcast({t:'hostMigrated',newHostId:newHostId});
+      }
+    } else {
+      if(Object.keys(net.lobbyPlayers).length===0){
+        try{ let reg=JSON.parse(localStorage.getItem('isekai_rooms')||'[]'); reg=reg.filter(r=>r.code!==net.roomCode); localStorage.setItem('isekai_rooms',JSON.stringify(reg)); }catch(e){}
+      } else {
+        let remaining=Object.keys(net.lobbyPlayers);
+        if(remaining.length>0){ let newHostId=remaining[0]; net.lobbyPlayers[newHostId].isHost=true; if(newHostId===net.myId){ net.isHost=true; document.getElementById('btnStartGame').style.display='block'; showMsg('👑 Host offline - kamu jadi host!'); } }
+      }
     }
   }
   if(net.isHost){ saveRoomRegistry(net.roomCode,{name:playerName,isOfficial:globalMode?false:false}); broadcastLobby(); broadcast({t:'playerLeft',id:playerId,name:name,reason:reason}); }
@@ -241,25 +249,21 @@ function hostRoom(){
   });
   net.peer.on('error',e=>{ if(!isLeaving) showMsg('Host error: '+e.type); });
 }
-
-function joinGlobalServer(){
-  joinRoomCode('GLOBAL');
-}
-
+function joinGlobalServer(){ let reg=getRoomRegistry(); let real=reg.find(r=>r.code==='GLOBAL' && !r.isOfficial); if(real){ joinRoomCode('GLOBAL'); } else { hostRoomGlobal(); } }
 function hostRoomGlobal(){
   if(isLeaving) isLeaving=false;
   let code='GLOBAL'; net.roomCode=code; net.isHost=true; net.started=false; net.lobbyPlayers={}; net.ready={}; net.lastSeen={}; globalMode=true;
-  showMsg('🌐 Membuka Global Server...');
+  showMsg('🌐 GLOBAL 20P Fixed Visibility');
   net.peer=new Peer('pptuqi-GLOBAL',{config:{iceServers:[{urls:'stun:stun.l.google.com:19302'}]}});
   net.peer.on('open',id=>{
     net.myId=id; net.lastSeen[id]=Date.now();
     net.lobbyPlayers[id]={id,name:playerName,faction:playerFaction,cls:playerClass,emoji:CLASS_DATA[playerClass].emoji,ready:false,isHost:true,kills:0,gold:0};
     net.ready[id]=false;
-    document.getElementById('lobbyCode').textContent='GLOBAL (20P) STABLE';
-    saveRoomRegistry(code,{name:'GLOBAL - '+playerName,isOfficial:false});
+    document.getElementById('lobbyCode').textContent='GLOBAL (20P) FIXED';
+    saveRoomRegistry(code,{name:'GLOBAL FIXED - '+playerName,isOfficial:false});
     openM('lobby'); closeM('roomList');
     document.getElementById('btnStartGame').style.display='block';
-    document.getElementById('netChip').textContent='🌐 Global Host';
+    document.getElementById('netChip').textContent='🌐 Global Host Fixed';
     renderLobby(); startHeartbeat();
     net.peer.on('connection',conn=>{
       conn.on('open',()=>{
@@ -275,73 +279,14 @@ function hostRoomGlobal(){
       });
     });
   });
-  net.peer.on('error',e=>{
-    if(e.type==='unavailable-id' && !isLeaving){
-      // ID GLOBAL sudah dipakai host lain, maka otomatis join ke room GLOBAL tersebut sebagai client
-      showMsg('Global aktif ditemukan, bergabung ke server...');
-      net.isHost=false;
-      connectToPeerId('pptuqi-GLOBAL');
-    } else if(!isLeaving){
-      showMsg('Global error: '+e.type);
-    }
-  });
+  net.peer.on('error',e=>{ if(e.type==='unavailable-id' && !isLeaving){ setTimeout(()=>joinRoomCode('GLOBAL'),800); } });
 }
-
-function connectToPeerId(peerId){
-  net.peer=new Peer({config:{iceServers:[{urls:'stun:stun.l.google.com:19302'}]}});
-  net.peer.on('open',id=>{
-    net.myId=id; net.lastSeen[id]=Date.now();
-    net.connToHost=net.peer.connect(peerId,{reliable:true});
-    net.connToHost.on('open',()=>{ net.connToHost.send({t:'join',id, name:playerName,faction:playerFaction,cls:playerClass,emoji:CLASS_DATA[playerClass].emoji}); startHeartbeat(); });
-    net.connToHost.on('data',d=>handleNetData(d,null));
-    net.connToHost.on('close',()=>{
-      if(isLeaving) return;
-      showMsg('Host disconnect - tidak auto balik lagi (FIXED)');
-      if(!isLeaving){ setTimeout(()=>{ if(!isLeaving) leaveServer(); },1000); }
-    });
-    net.connToHost.on('error',()=>{ if(!isLeaving) showMsg('Conn error'); });
-  });
-  document.getElementById('lobbyCode').textContent='GLOBAL';
-  document.getElementById('netChip').textContent='🟡 Join Global';
-  openM('lobby'); closeM('roomList');
-}
-
 function joinByCode(){ let c=document.getElementById('joinCode').value.trim().toUpperCase(); if(c) joinRoomCode(c); }
 function joinRoomCode(code){
   if(isLeaving) isLeaving=false;
   if(code==='GLOBAL') globalMode=true; else globalMode=false;
   net.roomCode=code; net.isHost=false; net.started=false; net.lastSeen={};
-  showMsg('Join '+code+' - Fix visibility');
-
-  if(code==='GLOBAL'){
-    // Cek apakah kita bisa connect ke pptuqi-GLOBAL, jika gagal/unavailable, jadilah host global
-    net.peer=new Peer({config:{iceServers:[{urls:'stun:stun.l.google.com:19302'}]}});
-    net.peer.on('open',id=>{
-      net.myId=id; net.lastSeen[id]=Date.now();
-      let cHost=net.peer.connect('pptuqi-GLOBAL',{reliable:true});
-      let opened=false;
-      cHost.on('open',()=>{
-        opened=true;
-        net.connToHost=cHost;
-        net.connToHost.send({t:'join',id, name:playerName,faction:playerFaction,cls:playerClass,emoji:CLASS_DATA[playerClass].emoji});
-        startHeartbeat();
-      });
-      cHost.on('data',d=>handleNetData(d,null));
-      cHost.on('close',()=>{ if(!isLeaving) leaveServer(); });
-      setTimeout(()=>{
-        if(!opened){
-          try{ net.peer.destroy(); }catch(e){}
-          hostRoomGlobal();
-        }
-      }, 2000);
-    });
-    net.peer.on('error',()=>{ hostRoomGlobal(); });
-    document.getElementById('lobbyCode').textContent='GLOBAL';
-    document.getElementById('netChip').textContent='🟡 Join Global';
-    openM('lobby'); closeM('roomList');
-    return;
-  }
-
+  showMsg('Join '+code+' - Mengamankan koneksi...');
   net.peer=new Peer({config:{iceServers:[{urls:'stun:stun.l.google.com:19302'}]}});
   net.peer.on('open',id=>{
     net.myId=id; net.lastSeen[id]=Date.now();
@@ -350,17 +295,17 @@ function joinRoomCode(code){
     net.connToHost.on('data',d=>handleNetData(d,null));
     net.connToHost.on('close',()=>{
       if(isLeaving) return;
-      showMsg('Host disconnect - tidak auto balik lagi (FIXED)');
-      if(!isLeaving){ setTimeout(()=>{ if(!isLeaving) leaveServer(); },1000); }
+      showMsg('Host disconnect - tidak auto balik lagi ke room (FIXED)');
+      if(globalMode && !isLeaving){ setTimeout(()=>{ if(!isLeaving) joinRoomCode('GLOBAL'); },1500); } 
+      else if(!isLeaving){ setTimeout(()=>{ if(!isLeaving) leaveServer(); },1000); }
     });
     net.connToHost.on('error',()=>{ if(!isLeaving) showMsg('Conn error'); });
   });
-  net.peer.on('error',e=>{ if(!isLeaving){ showMsg('Gagal join '+code); } });
+  net.peer.on('error',e=>{ if(!isLeaving){ showMsg('Gagal join '+code+'. Mengulang...'); if(code==='GLOBAL') hostRoomGlobal(); } });
   document.getElementById('lobbyCode').textContent=code;
   document.getElementById('netChip').textContent='🟡 Join '+code+' Fixed';
   openM('lobby'); closeM('roomList');
 }
-
 function renderLobby(){
   let cont=document.getElementById('lobbyPlayers'); if(!cont) return;
   let now=Date.now();
@@ -393,7 +338,7 @@ function handleNetData(data,conn){
 
       broadcast({t:'playerJoined',player:net.lobbyPlayers[newId]});
       let existingPlayers=Object.values(net.lobbyPlayers).filter(p=>p.id!==newId);
-      conn.send({t:'existingPlayers',players:existingPlayers});
+      conn.send({t:'existingPlayers',players:existingPlayers, started:net.started});
 
       renderLobby(); broadcastLobby();
       conn.send({t:'joined',myId:newId,players:net.lobbyPlayers,started:net.started});
@@ -406,7 +351,7 @@ function handleNetData(data,conn){
     if(gameState==='PLAYING'){
       if(!remotePlayers[p.id]){
         remotePlayers[p.id]={...p,x:p.faction==='human'?HUMAN_CITY.cx:DEMON_CITY.cx,y:p.faction==='human'?HUMAN_CITY.cy:DEMON_CITY.cy,targetX:0,targetY:0,hp:CLASS_DATA[p.cls].hp,maxHp:CLASS_DATA[p.cls].hp,facing:0,atkAnim:0,skillAnim:0,chat:'',chatT:0,dead:false,dashT:0,stunned:0,burnT:0};
-        showMsg('👋 '+p.name+' join - terlihat! (FIXED)');
+        showMsg('👋 '+p.name+' join permainan!');
         effects.push({x:remotePlayers[p.id].x,y:remotePlayers[p.id].y,t:30,type:'dmg',txt:'👋 '+p.name+' JOIN!',col:'#4caf50'});
       }
     }
@@ -417,12 +362,11 @@ function handleNetData(data,conn){
       if(p.id===net.myId) return;
       if(!net.lobbyPlayers[p.id]){ net.lobbyPlayers[p.id]=p; net.ready[p.id]=false; }
       net.lastSeen[p.id]=Date.now();
-      if(gameState==='PLAYING' && !remotePlayers[p.id]){
+      if(data.started && gameState==='PLAYING' && !remotePlayers[p.id]){
         remotePlayers[p.id]={...p,x:p.faction==='human'?HUMAN_CITY.cx:DEMON_CITY.cx,y:p.faction==='human'?HUMAN_CITY.cy:DEMON_CITY.cy,targetX:0,targetY:0,hp:CLASS_DATA[p.cls].hp,maxHp:CLASS_DATA[p.cls].hp,facing:0,atkAnim:0,skillAnim:0,chat:'',chatT:0,dead:false,dashT:0};
       }
     });
     renderLobby();
-    if(gameState!=='PLAYING') showMsg('✅ Melihat '+(data.players.length)+' player lama - Visibility FIXED');
   }
   else if(data.t==='lobby'){ net.lobbyPlayers=data.players; net.ready=data.ready; renderLobby(); }
   else if(data.t==='joined'){ net.lobbyPlayers=data.players; if(data.started) net.started=data.started; renderLobby(); }
@@ -438,20 +382,11 @@ function handleNetData(data,conn){
   else if(data.t==='skill'){ let rp=remotePlayers[data.id]; if(rp){ rp.skillAnim=24; effects.push({x:rp.x,y:rp.y,t:22,type:'aoe',r:data.r||120,col:data.col||'#ffd54f'}); } }
   else if(data.t==='proj'){ projectiles.push({...data.proj}); if(data.proj.ownerId) net.lastSeen[data.proj.ownerId]=Date.now(); }
   else if(data.t==='dragonSkill'){ handleDragonSkill(data); }
-  else if(data.t==='enemiesSync'){
-    if(!net.isHost && data.enemies){
-      for(let i=0; i<enemies.length && i<data.enemies.length; i++){
-        enemies[i].x = data.enemies[i].x;
-        enemies[i].y = data.enemies[i].y;
-        enemies[i].hp = data.enemies[i].hp;
-        enemies[i].dead = data.enemies[i].dead;
-      }
-    }
-  }
   else if(data.t==='chat'){ let rp=remotePlayers[data.id]; if(rp){ rp.chat=data.txt; rp.chatT=220; net.lastSeen[data.id]=Date.now(); } net.chatLog.push({name:data.name,txt:data.txt}); updateLobbyChat(); }
   else if(data.t==='leave'){ removePlayerFromRoom(data.id,'keluar game'); }
   else if(data.t==='full'){ showMsg(data.msg); if(!isLeaving) leaveServer(); }
   else if(data.t==='castle'){ if(data.faction==='human') HUMAN_CASTLE.hp=data.hp; else DEMON_CASTLE.hp=data.hp; }
+  else if(data.t==='syncEn'){ data.en.forEach((e,i)=>{ if(enemies[i]){ enemies[i].x=e.x; enemies[i].y=e.y; enemies[i].hp=e.hp; enemies[i].dead=e.dead; enemies[i].atkCd=e.atkCd; } }); }
 }
 function removeConn(conn){ net.conns=net.conns.filter(c=>c!==conn); }
 function updateLobbyChat(){ let el=document.getElementById('lobbyChat'); if(!el) return; el.innerHTML=net.chatLog.slice(-10).map(c=>`<div><b>${c.name}:</b> ${c.txt}</div>`).join(''); el.scrollTop=el.scrollHeight; }
@@ -470,16 +405,16 @@ function startGameWithPlayers(players){
     initGame();
     gameState='PLAYING'; net.started=true;
     document.getElementById('netChip').textContent=(globalMode?'🌐':'🟢')+' PLAY '+net.roomCode;
-    showMsg('🚀 Game mulai! Update: Healer tembak hati + Sinkronisasi musuh + Guard/Tower aktif');
+    showMsg('🚀 Game mulai! Update: Tower & Musuh tersinkronisasi');
   }catch(e){ console.error(e); document.querySelectorAll('.modal').forEach(m=>m.classList.remove('on')); initGame(); gameState='PLAYING'; }
 }
 
-// GAME CORE
 let canvas,ctx,mcanvas,mctx,keys={},player,camera,enemies=[],ruins=[],projectiles=[],effects=[],guards=[],demonGuards=[],towers=[],npcs=[],buildings=[],buildingsHuman=[],buildingsDemon=[],trees=[],rocks=[],rivers=[],bridges=[],paths=[];
 let gameState='MENU', gameWon=false;
 let remotePlayers={};
 let quest={current:0,target:15};
 let joystick={active:false,dx:0,dy:0,startX:0,startY:0,moveX:0,moveY:0};
+let lastEnemySync=0;
 
 function initGame(){
   let cls=CLASS_DATA[playerClass];
@@ -512,607 +447,420 @@ function genMapBaruSuperBagus(){
 }
 function dist(a,b){ let dx=a.x-b.x, dy=a.y-b.y; return Math.sqrt(dx*dx+dy*dy); }
 function killPlayer(victimId,killerId,isLocal){ if(isLocal){ effects.push({x:player.x,y:player.y,t:30,type:'dmg',txt:'💀 MATI',col:'#ff0000'}); showMsg('💀 Mati! Respawn 3s'); player.dead=true; setTimeout(()=>{ player.hp=player.maxHp; player.mp=player.maxMp; player.dead=false; player.stunned=0; player.x=player.faction==='human'?HUMAN_CITY.cx:DEMON_CITY.cx; player.y=player.faction==='human'?HUMAN_CITY.cy:DEMON_CITY.cy; },3000); }else{ let rp=remotePlayers[victimId]; if(rp){ effects.push({x:rp.x,y:rp.y,t:30,type:'dmg',txt:'💀 MATI',col:'#ff0000'}); rp.hp=0; rp.dead=true; setTimeout(()=>{ rp.hp=rp.maxHp; rp.dead=false; rp.x=rp.faction==='human'?HUMAN_CITY.cx:DEMON_CITY.cx; rp.y=rp.faction==='human'?HUMAN_CITY.cy:DEMON_CITY.cy; },3000); } } if(killerId===net.myId){ player.kills++; } }
-
-function doAttack(){
-  if(gameState!=='PLAYING' || player.atkCd>0 || player.dead || player.stunned>0) return;
-  player.atkCd=16; let ang=player.facing;
-  if(player.cls==='assassin'){
-    let dashDist=95; let nx=player.x+Math.cos(ang)*dashDist; let ny=player.y+Math.sin(ang)*dashDist;
-    nx=Math.max(40,Math.min(WORLD.w-40,nx)); ny=Math.max(40,Math.min(WORLD.h-40,ny));
-    effects.push({x:player.x,y:player.y,t:12,type:'dash',x2:nx,y2:ny});
-    player.x=nx; player.y=ny; player.dashT=14;
-    try{ broadcast({t:'remoteDash',id:net.myId,x:player.x,y:player.y,ang:ang}); }catch(e){}
-    if(net.connToHost) try{ net.connToHost.send({t:'remoteDash',id:net.myId,x:player.x,y:player.y,ang:ang}); }catch(e){}
-  }
-  if(net.isHost) broadcast({t:'atk',id:net.myId,ang}); else try{ net.connToHost?.send({t:'atk',id:net.myId,ang}); }catch(e){}
-  effects.push({x:player.x,y:player.y,t:12,type:'slash',r:player.range});
-
-  if(player.cls==='healer'){
-    // Healer menembakkan HATI ❤️ untuk menyerang musuh (jarak jauh seperti mage) sekaligus menyembuhkan teman
-    let proj={x:player.x,y:player.y,vx:Math.cos(ang)*9,vy:Math.sin(ang)*9,dmg:player.atk*1.2,emoji:'❤️',isHeal:true,faction:player.faction,ownerId:net.myId,life:70};
-    projectiles.push(proj);
-    if(net.isHost) broadcast({t:'proj',proj}); else try{ net.connToHost?.send({t:'proj',proj}); }catch(e){}
-  } else if(player.cls==='mage'){
-    let proj={x:player.x,y:player.y,vx:Math.cos(ang)*8,vy:Math.sin(ang)*8,dmg:player.atk*1.4,emoji:'🔮',isMage:true,faction:player.faction,ownerId:net.myId,life:70};
-    projectiles.push(proj);
-    if(net.isHost) broadcast({t:'proj',proj}); else try{ net.connToHost?.send({t:'proj',proj}); }catch(e){}
-  } else if(player.cls==='archer'){
-    let proj={x:player.x,y:player.y,vx:Math.cos(ang)*14,vy:Math.sin(ang)*14,dmg:player.atk*1.2,emoji:'🏹',faction:player.faction,ownerId:net.myId,life:50};
-    projectiles.push(proj);
-    if(net.isHost) broadcast({t:'proj',proj}); else try{ net.connToHost?.send({t:'proj',proj}); }catch(e){}
-  } else {
-    enemies.forEach(en=>{ if(!en.dead && dist(player,en)<player.range){ en.hp-=player.atk*(player.cls==='assassin'?2.5:1); if(en.hp<=0) killEnemy(en); }});
-    Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction!==player.faction && dist(player,rp)<player.range){ rp.hp-=player.atk*(player.cls==='assassin'?2.5:1); effects.push({x:rp.x,y:rp.y-10,t:16,type:'dmg',txt:Math.floor(player.atk*(player.cls==='assassin'?2.5:1))+'',col:'#ff0000'}); if(rp.hp<=0){ rp.dead=true; player.kills++; broadcast({t:'playerDied',victimId:rp.id,killerId:net.myId}); setTimeout(()=>{rp.hp=rp.maxHp; rp.dead=false;},3000); } }});
-    [...guards,...demonGuards].forEach(g=>{ if(!g.dead && g.faction!==player.faction && dist(player,g)<player.range+20){ g.hp-=player.atk; if(g.hp<=0){ g.dead=true; g.respawnT=600; player.gold+=30; player.kills++; } }});
-    towers.forEach(t=>{ if(!t.dead && t.faction!==player.faction && dist(player,t)<player.range+30){ t.hp-=player.atk; if(t.hp<=0) t.dead=true; }});
-    if(HUMAN_CASTLE.faction!==player.faction && dist(player,HUMAN_CASTLE)<140){ HUMAN_CASTLE.hp-=player.atk*0.8; if(net.isHost) broadcast({t:'castle',faction:'human',hp:HUMAN_CASTLE.hp}); }
-    if(DEMON_CASTLE.faction!==player.faction && dist(player,DEMON_CASTLE)<140){ DEMON_CASTLE.hp-=player.atk*0.8; if(net.isHost) broadcast({t:'castle',faction:'demon',hp:DEMON_CASTLE.hp}); }
-  }
-}
-
-function doSkill(){
-  if(player.skillCd>0 || player.mp<18 || player.dead || player.stunned>0) return;
-  player.skillCd=90; player.mp-=18; let cls=player.cls;
-  if(cls==='knight'){
-    effects.push({x:player.x,y:player.y,t:20,type:'aoe',r:140,col:'#ffd54f'});
-    enemies.forEach(en=>{ if(!en.dead && dist(player,en)<140){ en.hp-=player.atk*2.2; if(en.hp<=0) killEnemy(en); }});
-    Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction!==player.faction && dist(player,rp)<140){ rp.hp-=player.atk*2.2; if(rp.hp<=0){ rp.dead=true; player.kills++; broadcast({t:'playerDied',victimId:rp.id,killerId:net.myId}); setTimeout(()=>{rp.hp=rp.maxHp; rp.dead=false;},3000);} }});
-    broadcast({t:'skill',id:net.myId,r:140,col:'#ffd54f'});
-  } else if(cls==='mage'){
-    effects.push({x:player.x,y:player.y,t:26,type:'explosion',r:120,col:'#7c4dff'});
-    effects.push({x:player.x,y:player.y,t:22,type:'aoe',r:180,col:'#7c4dff'});
-    enemies.forEach(en=>{ if(!en.dead && dist(player,en)<180){ en.hp-=player.atk*2.8; if(en.hp<=0) killEnemy(en); }});
-    Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction!==player.faction && dist(player,rp)<180){ rp.hp-=player.atk*2.8; if(rp.hp<=0){ rp.dead=true; player.kills++; broadcast({t:'playerDied',victimId:rp.id,killerId:net.myId}); setTimeout(()=>{rp.hp=rp.maxHp; rp.dead=false;},3000);} }});
-    broadcast({t:'skill',id:net.myId,r:180,col:'#7c4dff'});
-  } else if(cls==='tank'){
-    effects.push({x:player.x,y:player.y,t:28,type:'aoe',r:280,col:'#ffd54f'});
-    effects.push({x:player.x,y:player.y,t:24,type:'explosion',r:280,col:'#ffd54f'});
-    enemies.forEach(en=>{ if(!en.dead && dist(player,en)<280){ en.hp-=player.atk*3.2; if(en.hp<=0) killEnemy(en); }});
-    Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction!==player.faction && dist(player,rp)<280){ rp.hp-=player.atk*3.2; if(rp.hp<=0){ rp.dead=true; player.kills++; broadcast({t:'playerDied',victimId:rp.id,killerId:net.myId}); setTimeout(()=>{rp.hp=rp.maxHp; rp.dead=false;},3000);} }});
-    towers.forEach(t=>{ if(t.faction!==player.faction && dist(player,t)<280){ t.hp-=80; if(t.hp<=0) t.dead=true; }});
-    [...guards,...demonGuards].forEach(g=>{ if(!g.dead && g.faction!==player.faction && dist(player,g)<280){ g.hp-=60; if(g.hp<=0){ g.dead=true; g.respawnT=600; player.gold+=30; } }});
-    broadcast({t:'skill',id:net.myId,r:280,col:'#ffd54f'});
-  } else if(cls==='archer'){
-    for(let k=0;k<5;k++){
-      let ang=player.facing+(k-2)*0.15;
-      let proj={x:player.x,y:player.y,vx:Math.cos(ang)*13,vy:Math.sin(ang)*13,dmg:player.atk*1.1,emoji:'🏹',faction:player.faction,ownerId:net.myId,life:45};
-      projectiles.push(proj);
-      if(net.isHost) broadcast({t:'proj',proj}); else try{ net.connToHost?.send({t:'proj',proj}); }catch(e){}
-    }
-    broadcast({t:'skill',id:net.myId,r:200,col:'#4caf50'});
-  } else if(cls==='assassin'){
-    player.x+=Math.cos(player.facing)*140; player.y+=Math.sin(player.facing)*140;
-    player.x=Math.max(40,Math.min(WORLD.w-40,player.x)); player.y=Math.max(40,Math.min(WORLD.h-40,player.y));
-    effects.push({x:player.x,y:player.y,t:18,type:'slash',r:90});
-    enemies.forEach(en=>{ if(!en.dead && dist(player,en)<90){ en.hp-=player.atk*3; if(en.hp<=0) killEnemy(en); }});
-    Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction!==player.faction && dist(player,rp)<90){ rp.hp-=player.atk*3; if(rp.hp<=0){ rp.dead=true; player.kills++; broadcast({t:'playerDied',victimId:rp.id,killerId:net.myId}); setTimeout(()=>{rp.hp=rp.maxHp; rp.dead=false;},3000);} }});
-    try{ broadcast({t:'remoteDash',id:net.myId,x:player.x,y:player.y}); }catch(e){}
-    broadcast({t:'skill',id:net.myId,r:90,col:'#fff'});
-  } else if(cls==='healer'){
-    player.hp=Math.min(player.maxHp,player.hp+player.maxHp*0.45);
-    effects.push({x:player.x,y:player.y,t:22,type:'aoe',r:200,col:'#00e676'});
-    Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction===player.faction && dist(player,rp)<200){ rp.hp=Math.min(rp.maxHp,rp.hp+40); }});
-    broadcast({t:'skill',id:net.myId,r:200,col:'#00e676'});
-  }
-}
-
-function doAct(){
-  let near=buildings.find(b=>dist(player,b)<110);
-  if(!near){
-    let rNear=ruins.find(r=>dist(player,r)<120 && !r.looted);
-    if(rNear){ lootRuin(rNear); return; }
-    showMsg('Dekati bangunan/reruntuhan'); return;
-  }
-  openBuilding(near);
-}
-function lootRuin(r){
-  if(r.looted) return; r.looted=true;
-  if(r.loot==='gold'){ player.gold+=80+Math.random()*120; showMsg('💰 Loot '+r.name+' +100G!'); }
-  else if(r.loot==='buff'){ player.buffT=40*60; player.atk*=1.15; showMsg('✨ Buff +15% 40s!'); }
-  else if(r.loot==='heal'){ player.hp=player.maxHp; showMsg('💚 Heal penuh'); }
-  else if(r.loot==='arena'){ showMsg('🏟️ Arena PvP!'); player.atk*=1.3; setTimeout(()=>{player.atk/=1.3;},30*60); }
-  else { player.gold+=50; showMsg('📜 Loot '+r.name); }
-}
-function openBuilding(b){
-  let body=document.getElementById('buildBody');
-  document.getElementById('buildTitle').textContent=b.emoji+' '+b.name;
-  if(b.type==='shop'){ body.innerHTML=`<p>Gold: ${Math.floor(player.gold)}</p><div class="grid2"><div class="card" onclick="buyItem('hp')">🧪 HP +50 - 30G</div><div class="card" onclick="buyItem('atk')">⚔️ ATK +5 - 80G</div><div class="card" onclick="buyItem('def')">🛡️ DEF +3 - 60G</div><div class="card" onclick="buyItem('speed')">👟 Speed +0.5 - 100G</div></div>`; }
-  else if(b.type==='inn'){ body.innerHTML=`<button class="btn big gold" onclick="restInn()">😴 Istirahat 20G</button>`; }
-  else if(b.type==='guild'){ body.innerHTML=`<div class="grid2">${Object.entries(CLASS_DATA).map(([k,v])=>`<div class="card" onclick="changeClass('${k}')">${v.emoji} ${v.name}<br><small>${v.desc}</small></div>`).join('')}</div>`; }
-  else if(b.type==='townhall' || b.type==='temple'){ body.innerHTML=`<button class="btn big gold" onclick="claimTownHall()">🏛️ Buff +20% 60s 50G</button><br><br><button class="btn big" onclick="healMonument()">💚 Heal +80</button>`; }
-  else if(b.type==='barracks'){ body.innerHTML=`<button class="btn big gold" onclick="recruitGuard()">💂 Rekrut Guard 100G</button>`; }
-  else { body.innerHTML=`<button class="btn big" onclick="hideInHouse()">🏚️ Sembunyi 10s</button>`; }
-  openM('build');
-}
-function buyItem(t){
-  let cost={hp:30,atk:80,def:60,speed:100}[t];
-  if(player.gold<cost){ showMsg('Gold kurang'); return; }
-  player.gold-=cost;
-  if(t==='hp') player.hp=Math.min(player.maxHp,player.hp+50);
-  else if(t==='atk') player.atk+=5;
-  else if(t==='def') player.def+=3;
-  else if(t==='speed') player.speed+=0.5;
-  showMsg('Beli '+t); closeM('build');
-}
+function doAttack(){ if(gameState!=='PLAYING' || player.atkCd>0 || player.dead || player.stunned>0) return; player.atkCd=16; let ang=player.facing; if(player.cls==='assassin'){ let dashDist=95; let nx=player.x+Math.cos(ang)*dashDist; let ny=player.y+Math.sin(ang)*dashDist; nx=Math.max(40,Math.min(WORLD.w-40,nx)); ny=Math.max(40,Math.min(WORLD.h-40,ny)); effects.push({x:player.x,y:player.y,t:12,type:'dash',x2:nx,y2:ny}); player.x=nx; player.y=ny; player.dashT=14; try{ broadcast({t:'remoteDash',id:net.myId,x:player.x,y:player.y,ang:ang}); }catch(e){} if(net.connToHost) try{ net.connToHost.send({t:'remoteDash',id:net.myId,x:player.x,y:player.y,ang:ang}); }catch(e){} } if(net.isHost) broadcast({t:'atk',id:net.myId,ang}); else try{ net.connToHost?.send({t:'atk',id:net.myId,ang}); }catch(e){} effects.push({x:player.x,y:player.y,t:12,type:'slash',r:player.range}); if(player.cls==='healer'){ let proj={x:player.x,y:player.y,vx:Math.cos(ang)*9,vy:Math.sin(ang)*9,dmg:player.atk*1.1,emoji:'❤️',isHeal:true,faction:player.faction,ownerId:net.myId,life:60}; projectiles.push(proj); if(net.isHost) broadcast({t:'proj',proj}); else try{ net.connToHost?.send({t:'proj',proj}); }catch(e){} } else if(player.cls==='mage'){ let proj={x:player.x,y:player.y,vx:Math.cos(ang)*8,vy:Math.sin(ang)*8,dmg:player.atk*1.4,emoji:'🔮',isMage:true,faction:player.faction,ownerId:net.myId,life:70}; projectiles.push(proj); if(net.isHost) broadcast({t:'proj',proj}); else try{ net.connToHost?.send({t:'proj',proj}); }catch(e){} } else if(player.cls==='archer'){ let proj={x:player.x,y:player.y,vx:Math.cos(ang)*14,vy:Math.sin(ang)*14,dmg:player.atk*1.2,emoji:'🏹',faction:player.faction,ownerId:net.myId,life:50}; projectiles.push(proj); if(net.isHost) broadcast({t:'proj',proj}); else try{ net.connToHost?.send({t:'proj',proj}); }catch(e){} } else { enemies.forEach(en=>{ if(!en.dead && dist(player,en)<player.range){ en.hp-=player.atk*(player.cls==='assassin'?2.5:1); if(en.hp<=0) killEnemy(en); }}); Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction!==player.faction && dist(player,rp)<player.range){ rp.hp-=player.atk*(player.cls==='assassin'?2.5:1); effects.push({x:rp.x,y:rp.y-10,t:16,type:'dmg',txt:Math.floor(player.atk*(player.cls==='assassin'?2.5:1))+'',col:'#ff0000'}); if(rp.hp<=0){ rp.dead=true; player.kills++; broadcast({t:'playerDied',victimId:rp.id,killerId:net.myId}); setTimeout(()=>{rp.hp=rp.maxHp; rp.dead=false;},3000); } }}); [...guards,...demonGuards].forEach(g=>{ if(!g.dead && g.faction!==player.faction && dist(player,g)<player.range+20){ g.hp-=player.atk; if(g.hp<=0){ g.dead=true; g.respawnT=600; player.gold+=30; player.kills++; } }}); towers.forEach(t=>{ if(!t.dead && t.faction!==player.faction && dist(player,t)<player.range+30){ t.hp-=player.atk; if(t.hp<=0) t.dead=true; }}); if(HUMAN_CASTLE.faction!==player.faction && dist(player,HUMAN_CASTLE)<140){ HUMAN_CASTLE.hp-=player.atk*0.8; if(net.isHost) broadcast({t:'castle',faction:'human',hp:HUMAN_CASTLE.hp}); } if(DEMON_CASTLE.faction!==player.faction && dist(player,DEMON_CASTLE)<140){ DEMON_CASTLE.hp-=player.atk*0.8; if(net.isHost) broadcast({t:'castle',faction:'demon',hp:DEMON_CASTLE.hp}); } } }
+function doSkill(){ if(player.skillCd>0 || player.mp<18 || player.dead || player.stunned>0) return; player.skillCd=90; player.mp-=18; let cls=player.cls; if(cls==='knight'){ effects.push({x:player.x,y:player.y,t:20,type:'aoe',r:140,col:'#ffd54f'}); enemies.forEach(en=>{ if(!en.dead && dist(player,en)<140){ en.hp-=player.atk*2.2; if(en.hp<=0) killEnemy(en); }}); Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction!==player.faction && dist(player,rp)<140){ rp.hp-=player.atk*2.2; if(rp.hp<=0){ rp.dead=true; player.kills++; broadcast({t:'playerDied',victimId:rp.id,killerId:net.myId}); setTimeout(()=>{rp.hp=rp.maxHp; rp.dead=false;},3000);} }}); broadcast({t:'skill',id:net.myId,r:140,col:'#ffd54f'}); } else if(cls==='mage'){ effects.push({x:player.x,y:player.y,t:26,type:'explosion',r:120,col:'#7c4dff'}); effects.push({x:player.x,y:player.y,t:22,type:'aoe',r:180,col:'#7c4dff'}); enemies.forEach(en=>{ if(!en.dead && dist(player,en)<180){ en.hp-=player.atk*2.8; if(en.hp<=0) killEnemy(en); }}); Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction!==player.faction && dist(player,rp)<180){ rp.hp-=player.atk*2.8; if(rp.hp<=0){ rp.dead=true; player.kills++; broadcast({t:'playerDied',victimId:rp.id,killerId:net.myId}); setTimeout(()=>{rp.hp=rp.maxHp; rp.dead=false;},3000);} }}); broadcast({t:'skill',id:net.myId,r:180,col:'#7c4dff'}); } else if(cls==='tank'){ effects.push({x:player.x,y:player.y,t:28,type:'aoe',r:280,col:'#ffd54f'}); effects.push({x:player.x,y:player.y,t:24,type:'explosion',r:280,col:'#ffd54f'}); enemies.forEach(en=>{ if(!en.dead && dist(player,en)<280){ en.hp-=player.atk*3.2; if(en.hp<=0) killEnemy(en); }}); Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction!==player.faction && dist(player,rp)<280){ rp.hp-=player.atk*3.2; if(rp.hp<=0){ rp.dead=true; player.kills++; broadcast({t:'playerDied',victimId:rp.id,killerId:net.myId}); setTimeout(()=>{rp.hp=rp.maxHp; rp.dead=false;},3000);} }}); towers.forEach(t=>{ if(t.faction!==player.faction && dist(player,t)<280){ t.hp-=80; if(t.hp<=0) t.dead=true; }}); [...guards,...demonGuards].forEach(g=>{ if(!g.dead && g.faction!==player.faction && dist(player,g)<280){ g.hp-=60; if(g.hp<=0){ g.dead=true; g.respawnT=600; player.gold+=30; } }}); broadcast({t:'skill',id:net.myId,r:280,col:'#ffd54f'}); } else if(cls==='archer'){ for(let k=0;k<5;k++){ let ang=player.facing+(k-2)*0.15; let proj={x:player.x,y:player.y,vx:Math.cos(ang)*13,vy:Math.sin(ang)*13,dmg:player.atk*1.1,emoji:'🏹',faction:player.faction,ownerId:net.myId,life:45}; projectiles.push(proj); if(net.isHost) broadcast({t:'proj',proj}); else try{ net.connToHost?.send({t:'proj',proj}); }catch(e){} } broadcast({t:'skill',id:net.myId,r:200,col:'#4caf50'}); } else if(cls==='assassin'){ player.x+=Math.cos(player.facing)*140; player.y+=Math.sin(player.facing)*140; player.x=Math.max(40,Math.min(WORLD.w-40,player.x)); player.y=Math.max(40,Math.min(WORLD.h-40,player.y)); effects.push({x:player.x,y:player.y,t:18,type:'slash',r:90}); enemies.forEach(en=>{ if(!en.dead && dist(player,en)<90){ en.hp-=player.atk*3; if(en.hp<=0) killEnemy(en); }}); Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction!==player.faction && dist(player,rp)<90){ rp.hp-=player.atk*3; if(rp.hp<=0){ rp.dead=true; player.kills++; broadcast({t:'playerDied',victimId:rp.id,killerId:net.myId}); setTimeout(()=>{rp.hp=rp.maxHp; rp.dead=false;},3000);} }}); try{ broadcast({t:'remoteDash',id:net.myId,x:player.x,y:player.y}); }catch(e){} broadcast({t:'skill',id:net.myId,r:90,col:'#fff'}); } else if(cls==='healer'){ player.hp=Math.min(player.maxHp,player.hp+player.maxHp*0.45); effects.push({x:player.x,y:player.y,t:22,type:'aoe',r:200,col:'#00e676'}); Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction===player.faction && dist(player,rp)<200){ rp.hp=Math.min(rp.maxHp,rp.hp+40); }}); broadcast({t:'skill',id:net.myId,r:200,col:'#00e676'}); } }
+function doAct(){ let near=buildings.find(b=>dist(player,b)<110); if(!near){ let rNear=ruins.find(r=>dist(player,r)<120 && !r.looted); if(rNear){ lootRuin(rNear); return; } showMsg('Dekati bangunan/reruntuhan'); return; } openBuilding(near); }
+function lootRuin(r){ if(r.looted) return; r.looted=true; if(r.loot==='gold'){ player.gold+=80+Math.random()*120; showMsg('💰 Loot '+r.name+' +100G!'); } else if(r.loot==='buff'){ player.buffT=40*60; player.atk*=1.15; showMsg('✨ Buff +15% 40s!'); } else if(r.loot==='heal'){ player.hp=player.maxHp; showMsg('💚 Heal penuh'); } else if(r.loot==='arena'){ showMsg('🏟️ Arena PvP!'); player.atk*=1.3; setTimeout(()=>{player.atk/=1.3;},30*60); } else { player.gold+=50; showMsg('📜 Loot '+r.name); } }
+function openBuilding(b){ let body=document.getElementById('buildBody'); document.getElementById('buildTitle').textContent=b.emoji+' '+b.name; if(b.type==='shop'){ body.innerHTML=`<p>Gold: ${Math.floor(player.gold)}</p><div class="grid2"><div class="card" onclick="buyItem('hp')">🧪 HP +50 - 30G</div><div class="card" onclick="buyItem('atk')">⚔️ ATK +5 - 80G</div><div class="card" onclick="buyItem('def')">🛡️ DEF +3 - 60G</div><div class="card" onclick="buyItem('speed')">👟 Speed +0.5 - 100G</div></div>`; } else if(b.type==='inn'){ body.innerHTML=`<button class="btn big gold" onclick="restInn()">😴 Istirahat 20G</button>`; } else if(b.type==='guild'){ body.innerHTML=`<div class="grid2">${Object.entries(CLASS_DATA).map(([k,v])=>`<div class="card" onclick="changeClass('${k}')">${v.emoji} ${v.name}<br><small>${v.desc}</small></div>`).join('')}</div>`; } else if(b.type==='townhall' || b.type==='temple'){ body.innerHTML=`<button class="btn big gold" onclick="claimTownHall()">🏛️ Buff +20% 60s 50G</button><br><br><button class="btn big" onclick="healMonument()">💚 Heal +80</button>`; } else if(b.type==='barracks'){ body.innerHTML=`<button class="btn big gold" onclick="recruitGuard()">💂 Rekrut Guard 100G</button>`; } else { body.innerHTML=`<button class="btn big" onclick="hideInHouse()">🏚️ Sembunyi 10s</button>`; } openM('build'); }
+function buyItem(t){ let cost={hp:30,atk:80,def:60,speed:100}[t]; if(player.gold<cost){ showMsg('Gold kurang'); return; } player.gold-=cost; if(t==='hp') player.hp=Math.min(player.maxHp,player.hp+50); else if(t==='atk') player.atk+=5; else if(t==='def') player.def+=3; else if(t==='speed') player.speed+=0.5; showMsg('Beli '+t); closeM('build'); }
 function restInn(){ if(player.gold<20){ showMsg('Butuh 20G'); return; } player.gold-=20; player.hp=player.maxHp; player.mp=player.maxMp; showMsg('Full HP/MP!'); closeM('build'); }
-function changeClass(k){
-  player.cls=k; let cls=CLASS_DATA[k]; player.maxHp=cls.hp; player.hp=cls.hp; player.atk=cls.atk; player.def=cls.def; player.range=cls.range; player.speed=cls.speed;
-  document.getElementById('classChip').textContent=cls.emoji+' '+cls.name; showMsg('Ganti jadi '+cls.name); closeM('build');
-}
+function changeClass(k){ player.cls=k; let cls=CLASS_DATA[k]; player.maxHp=cls.hp; player.hp=cls.hp; player.atk=cls.atk; player.def=cls.def; player.range=cls.range; player.speed=cls.speed; document.getElementById('classChip').textContent=cls.emoji+' '+cls.name; showMsg('Ganti jadi '+cls.name); closeM('build'); }
 function claimTownHall(){ if(player.gold<50){ showMsg('Butuh 50G'); return; } player.gold-=50; player.buffT=60*60; player.atk*=1.2; showMsg('Buff 20% 60s!'); closeM('build'); }
 function healMonument(){ player.hp=Math.min(player.maxHp,player.hp+80); showMsg('Heal +80'); closeM('build'); }
-function recruitGuard(){
-  if(player.gold<100){ showMsg('Butuh 100G'); return; }
-  player.gold-=100; let f=player.faction; let arr=f==='human'?guards:demonGuards;
-  arr.push({x:player.x+Math.random()*80-40,y:player.y+Math.random()*80-40,w:40,h:40,hp:250,maxHp:250,dead:false,faction:f,emoji:f==='human'?'💂':'👹',respawnT:0,atkCd:0});
-  showMsg('💂 Guard baru!'); closeM('build');
-}
+function recruitGuard(){ if(player.gold<100){ showMsg('Butuh 100G'); return; } player.gold-=100; let f=player.faction; let arr=f==='human'?guards:demonGuards; arr.push({x:player.x+Math.random()*80-40,y:player.y+Math.random()*80-40,w:40,h:40,hp:250,maxHp:250,dead:false,faction:f,emoji:f==='human'?'💂':'👹',respawnT:0,atkCd:0}); showMsg('💂 Guard baru!'); closeM('build'); }
 function hideInHouse(){ showMsg('Sembunyi 10s'); player.buffT=10*60; closeM('build'); }
-function killEnemy(en){
-  if(en.dead) return; en.dead=true; player.gold+=12+Math.random()*18; player.kills++; quest.current++;
-  if(en.isMiniDragon){ showMsg('🐉 Mini naga kalah!'); return; }
-  if(en.isDragon){
-    player.gold+=500; effects.push({x:en.x,y:en.y,t:80,type:'dmg',txt:'🐲 NAGA KALAH! BUFF 100% 120s!',col:'#ffd54f'});
-    player.buffT=120*60; player.atk*=2; player.maxHp*=1.5; player.hp=player.maxHp;
-    showMsg('🐲 NAGA OP KALAH! BUFF 100% 120s +500G!');
-    setTimeout(()=>{ en.hp=en.maxHp; en.dead=false; en.x=3000; en.y=2000; en.enraged=false; },180000);
-  }
-  updateBars();
-}
-function doDragonSkills(dragon){
-  if(dragon.dead || !dragon.isDragon) return;
-  if(dragon.skillCd>0){ dragon.skillCd--; return; }
-  if(!dragon.enraged && dragon.hp/dragon.maxHp<0.3){
-    dragon.enraged=true; effects.push({x:dragon.x,y:dragon.y,t:40,type:'aoe',r:400,col:'#ff0000'});
-    effects.push({x:dragon.x,y:dragon.y,t:40,type:'dmg',txt:'😡 ENRAGE! ATK x2!',col:'#ff0000'});
-    showMsg('😡 NAGA ENRAGE!'); broadcast({t:'dragonSkill',type:'enrage',x:dragon.x,y:dragon.y});
-  }
-  let skills=[1,2,3].filter(s=>s!==dragon.lastSkill);
-  let skill=skills[Math.floor(Math.random()*skills.length)]||Math.floor(Math.random()*3)+1;
-  dragon.lastSkill=skill; dragon.skillCd=dragon.enraged?90:150;
-  if(skill===1) dragonFireBreath(dragon); else if(skill===2) dragonMeteorShower(dragon); else dragonFearRoar(dragon);
-}
-function dragonFireBreath(dragon){
-  let targets=[]; if(!player.dead && dist(dragon,player)<350) targets.push(player);
-  Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && dist(dragon,rp)<350) targets.push(rp); });
-  let target=targets[0]; let ang=target?Math.atan2(target.y-dragon.y,target.x-dragon.x):Math.random()*Math.PI*2;
-  effects.push({x:dragon.x,y:dragon.y,t:20,type:'aoe',r:350,col:'#ff5722'});
-  effects.push({x:dragon.x,y:dragon.y,t:18,type:'dmg',txt:'🔥 FIRE BREATH!',col:'#ff5722'});
-  broadcast({t:'dragonSkill',type:'fire',x:dragon.x,y:dragon.y,ang:ang});
-  targets.forEach(t=>{
-    let tAng=Math.atan2(t.y-dragon.y,t.x-dragon.x); let diff=Math.abs(((tAng-ang+Math.PI*3)%(Math.PI*2))-Math.PI);
-    if(diff<0.9){
-      t.hp-=40; t.burnT=5*60; effects.push({x:t.x,y:t.y-10,t:16,type:'dmg',txt:'🔥 40 + BURN',col:'#ff5722'});
-      if(t===player && player.hp<=0) killPlayer(net.myId,'dragon',true);
-      else if(t!==player && t.hp<=0){ t.dead=true; broadcast({t:'playerDied',victimId:t.id,killerId:'dragon'}); setTimeout(()=>{t.hp=t.maxHp; t.dead=false;},3000); }
-    }
-  });
-}
-function dragonMeteorShower(dragon){
-  effects.push({x:dragon.x,y:dragon.y,t:24,type:'dmg',txt:'☄️ METEOR 8x!',col:'#ff9800'});
-  broadcast({t:'dragonSkill',type:'meteor',x:dragon.x,y:dragon.y});
-  for(let i=0;i<8;i++){
-    setTimeout(()=>{
-      let mx=dragon.x+(Math.random()-0.5)*600; let my=dragon.y+(Math.random()-0.5)*600;
-      effects.push({x:mx,y:my,t:30,type:'explosion',r:120,col:'#ff5722'});
-      effects.push({x:mx,y:my,t:20,type:'aoe',r:120,col:'#ff9800'});
-      let dmgTargets=[]; if(!player.dead && dist({x:mx,y:my},player)<120) dmgTargets.push(player);
-      Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && dist({x:mx,y:my},rp)<120) dmgTargets.push(rp); });
-      dmgTargets.forEach(t=>{
-        t.hp-=35; effects.push({x:t.x,y:t.y-10,t:16,type:'dmg',txt:'☄️ 35',col:'#ff9800'});
-        if(t===player && player.hp<=0) killPlayer(net.myId,'dragon',true);
-        else if(t!==player && t.hp<=0){ t.dead=true; broadcast({t:'playerDied',victimId:t.id,killerId:'dragon'}); setTimeout(()=>{t.hp=t.maxHp; t.dead=false;},3000); }
-      });
-    }, i*250);
-  }
-}
-function dragonFearRoar(dragon){
-  effects.push({x:dragon.x,y:dragon.y,t:30,type:'aoe',r:400,col:'#9c27b0'});
-  effects.push({x:dragon.x,y:dragon.y,t:28,type:'dmg',txt:'😱 FEAR ROAR + 3 MINI NAGA!',col:'#9c27b0'});
-  broadcast({t:'dragonSkill',type:'fear',x:dragon.x,y:dragon.y});
-  let targets=[]; if(!player.dead && dist(dragon,player)<400) targets.push(player);
-  Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && dist(dragon,rp)<400) targets.push(rp); });
-  targets.forEach(t=>{ t.stunned=2*60; t.hp-=20; effects.push({x:t.x,y:t.y-20,t:30,type:'dmg',txt:'😱 STUN 2s',col:'#9c27b0'}); });
-  for(let i=0;i<3;i++){
-    let ang=(Math.PI*2/3)*i; let mx=dragon.x+Math.cos(ang)*120; let my=dragon.y+Math.sin(ang)*120;
-    enemies.push({x:mx,y:my,hp:400,maxHp:400,dead:false,emoji:'🐉',isBoss:false,isMiniDragon:true,vx:(Math.random()-0.5)*2,vy:(Math.random()-0.5)*2,atkCd:0});
-    effects.push({x:mx,y:my,t:20,type:'dmg',txt:'🐉 Mini summon!',col:'#9c27b0'});
-  }
-}
-function handleDragonSkill(data){
-  if(data.type==='fire'){ effects.push({x:data.x,y:data.y,t:20,type:'aoe',r:350,col:'#ff5722'}); }
-  else if(data.type==='meteor'){
-    effects.push({x:data.x,y:data.y,t:24,type:'dmg',txt:'☄️ METEOR!',col:'#ff9800'});
-    for(let i=0;i<8;i++){ setTimeout(()=>{ let mx=data.x+(Math.random()-0.5)*600; let my=data.y+(Math.random()-0.5)*600; effects.push({x:mx,y:my,t:30,type:'explosion',r:120,col:'#ff5722'}); }, i*250); }
-  }
-  else if(data.type==='fear'){ effects.push({x:data.x,y:data.y,t:30,type:'aoe',r:400,col:'#9c27b0'}); }
-  else if(data.type==='enrage'){ effects.push({x:data.x,y:data.y,t:40,type:'aoe',r:400,col:'#ff0000'}); }
-}
-
-let lastPosSend=0;
-let lastSyncSend=0;
+function killEnemy(en){ if(en.dead) return; en.dead=true; player.gold+=12+Math.random()*18; player.kills++; quest.current++; if(en.isMiniDragon){ showMsg('🐉 Mini naga kalah!'); return; } if(en.isDragon){ player.gold+=500; effects.push({x:en.x,y:en.y,t:80,type:'dmg',txt:'🐲 NAGA KALAH! BUFF 100% 120s!',col:'#ffd54f'}); player.buffT=120*60; player.atk*=2; player.maxHp*=1.5; player.hp=player.maxHp; showMsg('🐲 NAGA OP KALAH! BUFF 100% 120s +500G!'); setTimeout(()=>{ en.hp=en.maxHp; en.dead=false; en.x=3000; en.y=2000; en.enraged=false; },180000); } updateBars(); }
+function doDragonSkills(dragon){ if(dragon.dead || !dragon.isDragon) return; if(dragon.skillCd>0){ dragon.skillCd--; return; } if(!dragon.enraged && dragon.hp/dragon.maxHp<0.3){ dragon.enraged=true; effects.push({x:dragon.x,y:dragon.y,t:40,type:'aoe',r:400,col:'#ff0000'}); effects.push({x:dragon.x,y:dragon.y,t:40,type:'dmg',txt:'😡 ENRAGE! ATK x2!',col:'#ff0000'}); showMsg('😡 NAGA ENRAGE!'); broadcast({t:'dragonSkill',type:'enrage',x:dragon.x,y:dragon.y}); } let skills=[1,2,3].filter(s=>s!==dragon.lastSkill); let skill=skills[Math.floor(Math.random()*skills.length)]||Math.floor(Math.random()*3)+1; dragon.lastSkill=skill; dragon.skillCd=dragon.enraged?90:150; if(skill===1) dragonFireBreath(dragon); else if(skill===2) dragonMeteorShower(dragon); else dragonFearRoar(dragon); }
+function dragonFireBreath(dragon){ let targets=[]; if(!player.dead && dist(dragon,player)<350) targets.push(player); Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && dist(dragon,rp)<350) targets.push(rp); }); let target=targets[0]; let ang=target?Math.atan2(target.y-dragon.y,target.x-dragon.x):Math.random()*Math.PI*2; effects.push({x:dragon.x,y:dragon.y,t:20,type:'aoe',r:350,col:'#ff5722'}); effects.push({x:dragon.x,y:dragon.y,t:18,type:'dmg',txt:'🔥 FIRE BREATH!',col:'#ff5722'}); broadcast({t:'dragonSkill',type:'fire',x:dragon.x,y:dragon.y,ang:ang}); targets.forEach(t=>{ let tAng=Math.atan2(t.y-dragon.y,t.x-dragon.x); let diff=Math.abs(((tAng-ang+Math.PI*3)%(Math.PI*2))-Math.PI); if(diff<0.9){ t.hp-=40; t.burnT=5*60; effects.push({x:t.x,y:t.y-10,t:16,type:'dmg',txt:'🔥 40 + BURN',col:'#ff5722'}); if(t===player && player.hp<=0) killPlayer(net.myId,'dragon',true); else if(t!==player && t.hp<=0){ t.dead=true; broadcast({t:'playerDied',victimId:t.id,killerId:'dragon'}); setTimeout(()=>{t.hp=t.maxHp; t.dead=false;},3000); } } }); }
+function dragonMeteorShower(dragon){ effects.push({x:dragon.x,y:dragon.y,t:24,type:'dmg',txt:'☄️ METEOR 8x!',col:'#ff9800'}); broadcast({t:'dragonSkill',type:'meteor',x:dragon.x,y:dragon.y}); for(let i=0;i<8;i++){ setTimeout(()=>{ let mx=dragon.x+(Math.random()-0.5)*600; let my=dragon.y+(Math.random()-0.5)*600; effects.push({x:mx,y:my,t:30,type:'explosion',r:120,col:'#ff5722'}); effects.push({x:mx,y:my,t:20,type:'aoe',r:120,col:'#ff9800'}); let dmgTargets=[]; if(!player.dead && dist({x:mx,y:my},player)<120) dmgTargets.push(player); Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && dist({x:mx,y:my},rp)<120) dmgTargets.push(rp); }); dmgTargets.forEach(t=>{ t.hp-=35; effects.push({x:t.x,y:t.y-10,t:16,type:'dmg',txt:'☄️ 35',col:'#ff9800'}); if(t===player && player.hp<=0) killPlayer(net.myId,'dragon',true); else if(t!==player && t.hp<=0){ t.dead=true; broadcast({t:'playerDied',victimId:t.id,killerId:'dragon'}); setTimeout(()=>{t.hp=t.maxHp; t.dead=false;},3000); } }); }, i*250); } }
+function dragonFearRoar(dragon){ effects.push({x:dragon.x,y:dragon.y,t:30,type:'aoe',r:400,col:'#9c27b0'}); effects.push({x:dragon.x,y:dragon.y,t:28,type:'dmg',txt:'😱 FEAR ROAR + 3 MINI NAGA!',col:'#9c27b0'}); broadcast({t:'dragonSkill',type:'fear',x:dragon.x,y:dragon.y}); let targets=[]; if(!player.dead && dist(dragon,player)<400) targets.push(player); Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && dist(dragon,rp)<400) targets.push(rp); }); targets.forEach(t=>{ t.stunned=2*60; t.hp-=20; effects.push({x:t.x,y:t.y-20,t:30,type:'dmg',txt:'😱 STUN 2s',col:'#9c27b0'}); }); for(let i=0;i<3;i++){ let ang=(Math.PI*2/3)*i; let mx=dragon.x+Math.cos(ang)*120; let my=dragon.y+Math.sin(ang)*120; enemies.push({x:mx,y:my,hp:400,maxHp:400,dead:false,emoji:'🐉',isBoss:false,isMiniDragon:true,vx:(Math.random()-0.5)*2,vy:(Math.random()-0.5)*2,atkCd:0}); effects.push({x:mx,y:my,t:20,type:'dmg',txt:'🐉 Mini summon!',col:'#9c27b0'}); } }
+function handleDragonSkill(data){ if(data.type==='fire'){ effects.push({x:data.x,y:data.y,t:20,type:'aoe',r:350,col:'#ff5722'}); } else if(data.type==='meteor'){ effects.push({x:data.x,y:data.y,t:24,type:'dmg',txt:'☄️ METEOR!',col:'#ff9800'}); for(let i=0;i<8;i++){ setTimeout(()=>{ let mx=data.x+(Math.random()-0.5)*600; let my=data.y+(Math.random()-0.5)*600; effects.push({x:mx,y:my,t:30,type:'explosion',r:120,col:'#ff5722'}); }, i*250); } } else if(data.type==='fear'){ effects.push({x:data.x,y:30,t:30,type:'aoe',r:400,col:'#9c27b0'}); } else if(data.type==='enrage'){ effects.push({x:data.x,y:data.y,t:40,type:'aoe',r:400,col:'#ff0000'}); } }
 
 function update(){
   if(gameState!=='PLAYING') return;
   let now=Date.now();
   let mvx=0,mvy=0;
-  if(keys['w']||keys['arrowup']) mvy=-1; if(keys['s']||keys['arrowdown']) mvy=1; if(keys['a']||keys['arrowleft']) mvx=-1; if(keys['d']||keys['arrowright']) mvx=1;
-  if(joystick.active){ mvx+=joystick.dx; mvy+=joystick.dy; }
-  if(mvx||mvy){
-    let len=Math.sqrt(mvx*mvx+mvy*mvy); mvx/=len; mvy/=len;
-    let sp=player.speed*(player.dashT>0?1.8:1)*(player.stunned>0?0:1);
-    if(player.stunned<=0){ player.x+=mvx*sp; player.y+=mvy*sp; player.facing=Math.atan2(mvy,mvx); }
-    if(now-lastPosSend>55){
-      if(net.isHost) broadcast({t:'pos',id:net.myId,x:player.x,y:player.y,ang:player.facing});
-      else try{ net.connToHost?.send({t:'pos',id:net.myId,x:player.x,y:player.y,ang:player.facing}); }catch(e){}
-      lastPosSend=now;
-    }
+  if(keys['w']||keys['arrowup']) mvy=-1; if(keys['s']||keys['arrowdown']) mvy=1;
+  if(keys['a']||keys['arrowleft']) mvx=-1; if(keys['d']||keys['arrowright']) mvx=1;
+  if(joystick.active && (joystick.dx!==0||joystick.dy!==0)){ mvx=joystick.dx; mvy=joystick.dy; }
+  
+  if(player.stunned>0) player.stunned--;
+  if(player.burnT>0){ player.burnT--; if(player.burnT%60===0){ player.hp-=2; if(player.hp<=0) killPlayer(net.myId,'burn',true); } }
+  
+  if(!player.dead && player.stunned<=0){
+    let spd=player.speed*(player.buffT>0?1.3:1);
+    player.x+=mvx*spd; player.y+=mvy*spd;
+    if(mvx!==0||mvy!==0) player.facing=Math.atan2(mvy,mvx);
+    player.x=Math.max(40,Math.min(WORLD.w-40,player.x));
+    player.y=Math.max(40,Math.min(WORLD.h-40,player.y));
   }
-  player.x=Math.max(20,Math.min(WORLD.w-20,player.x)); player.y=Math.max(20,Math.min(WORLD.h-20,player.y));
-  let inRiver=false;
-  rivers.forEach(r=>{ if(player.x>r.x && player.x<r.x+r.w && player.y>r.y && player.y<r.y+r.h){ let onBridge=bridges.some(b=>player.x>b.x && player.x<b.x+b.w && player.y>b.y && player.y<b.y+b.h); if(!onBridge) inRiver=true; }});
-  if(inRiver){ player.x-=mvx*player.speed*1.5; player.y-=mvy*player.speed*1.5; }
-  camera.x+= (player.x-VIEW_W/2 - camera.x)*0.12; camera.y+= (player.y-VIEW_H/2 - camera.y)*0.12;
-  camera.x=Math.max(0,Math.min(WORLD.w-VIEW_W,camera.x)); camera.y=Math.max(0,Math.min(WORLD.h-VIEW_H,camera.y));
-  if(player.atkCd>0) player.atkCd--; if(player.skillCd>0) player.skillCd--; if(player.buffT>0) player.buffT--; if(player.dashT>0) player.dashT--; if(player.chatT>0) player.chatT--; if(player.stunned>0) player.stunned--;
-  if(player.burnT>0){ player.burnT--; if(player.burnT%60===0){ player.hp-=3; effects.push({x:player.x,y:player.y-10,t:14,type:'dmg',txt:'🔥3',col:'#ff5722'}); } }
-  if(now%1500<16 && !player.dead){ player.hp=Math.min(player.maxHp,player.hp+2); player.mp=Math.min(player.maxMp,player.mp+3); }
-  if(player.hp<=0 && !player.dead){ player.hp=0; player.dead=true; showMsg('💀 Mati! Respawn 3s'); setTimeout(()=>{ player.hp=player.maxHp; player.mp=player.maxMp; player.dead=false; player.stunned=0; player.burnT=0; player.x=player.faction==='human'?HUMAN_CITY.cx:DEMON_CITY.cx; player.y=player.faction==='human'?HUMAN_CITY.cy:DEMON_CITY.cy; },3000); }
+  
+  if(player.atkCd>0) player.atkCd--;
+  if(player.skillCd>0) player.skillCd--;
+  if(player.dashT>0) player.dashT--;
+  if(player.buffT>0) player.buffT--;
+  if(player.chatT>0) player.chatT--;
+  if(!player.dead && player.hp<player.maxHp) player.hp=Math.min(player.maxHp,player.hp+(player.cls==='healer'?0.2:0.04));
+  if(!player.dead && player.mp<player.maxMp) player.mp=Math.min(player.maxMp,player.mp+0.05);
 
-  npcs.forEach(n=>{ if(n.restT>0){ n.restT--; return; } n.x+=n.vx; n.y+=n.vy; if(Math.random()<0.02){ n.vx=(Math.random()-0.5)*1.2; n.vy=(Math.random()-0.5)*1.2; } if(n.x<0||n.x>WORLD.w) n.vx*=-1; if(n.y<0||n.y>WORLD.h) n.vy*=-1; if(Math.random()<0.003){ n.chat=['Halo!','Jaga kastil!','Lewat jembatan!','Naga di tengah!'][Math.floor(Math.random()*4)]; n.chatT=180; } if(n.chatT>0) n.chatT--; if(Math.random()<0.005) n.restT=300+Math.random()*600; });
+  let camTgtX=player.x-VIEW_W/2; let camTgtY=player.y-VIEW_H/2;
+  camTgtX=Math.max(0,Math.min(WORLD.w-VIEW_W,camTgtX));
+  camTgtY=Math.max(0,Math.min(WORLD.h-VIEW_H,camTgtY));
+  camera.x+=(camTgtX-camera.x)*0.1; camera.y+=(camTgtY-camera.y)*0.1;
 
-  // Guard & Tower logika serang player lawan dan musuh NPC
-  [...guards,...demonGuards].forEach(g=>{
-    if(g.dead){
-      if(g.respawnT>0){ g.respawnT--; if(g.respawnT<=0){ g.dead=false; g.hp=g.maxHp; g.x=g.faction==='human'?HUMAN_CASTLE.x+Math.random()*120-60:DEMON_CASTLE.x+Math.random()*120-60; g.y=(g.faction==='human'?HUMAN_CASTLE:DEMON_CASTLE).y+180; } }
-      return;
-    }
-    let target=null, md=450;
-    // Cek player lawan
-    if(!player.dead && player.faction!==g.faction && dist(g,player)<md){ target=player; md=dist(g,player); }
-    Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction!==g.faction && dist(g,rp)<md){ target=rp; md=dist(g,rp); }});
-    // Cek musuh NPC jika guard human (atau sebaliknya jika demon guard)
+  if(net.isHost || !net.roomCode){
     enemies.forEach(en=>{
-      if(!en.dead && dist(g,en)<md){
-        // Human guard menyerang musuh monster, Demon guard menyerang musuh monster juga
-        target=en; md=dist(g,en);
+      if(en.dead) return;
+      if(en.isDragon){ doDragonSkills(en); }
+      if(en.isDragon && dist(en,player)<800){
+        let dx=player.x-en.x, dy=player.y-en.y; let d=Math.sqrt(dx*dx+dy*dy);
+        if(d>150){ en.x+=(dx/d)*(en.enraged?3:1.5); en.y+=(dy/d)*(en.enraged?3:1.5); }
+        if(en.atkCd>0) en.atkCd--;
+        if(en.atkCd<=0 && d<200){ en.atkCd=en.enraged?30:50; player.hp-=en.enraged?40:20; if(player.hp<=0) killPlayer(net.myId,'dragon',true); effects.push({x:player.x,y:player.y-10,t:16,type:'dmg',txt:en.enraged?'-40':'-20',col:'#ff0000'}); }
+      } else if(dist(en,player)<300){
+        let dx=player.x-en.x, dy=player.y-en.y; let d=Math.sqrt(dx*dx+dy*dy);
+        if(d>50){ en.x+=(dx/d)*(en.isMiniDragon?3.5:2); en.y+=(dy/d)*(en.isMiniDragon?3.5:2); }
+        if(en.atkCd>0) en.atkCd--;
+        if(en.atkCd<=0 && d<60){ en.atkCd=70; player.hp-=en.isMiniDragon?15:10; if(player.hp<=0) killPlayer(net.myId,'enemy',true); effects.push({x:player.x,y:player.y-10,t:16,type:'dmg',txt:en.isMiniDragon?'-15':'-10',col:'#ff0000'}); }
+      } else if(!en.isDragon){
+        if(Math.random()<0.02){ en.vx=(Math.random()-0.5)*1.5; en.vy=(Math.random()-0.5)*1.5; }
+        en.x+=en.vx; en.y+=en.vy; en.x=Math.max(40,Math.min(WORLD.w-40,en.x)); en.y=Math.max(40,Math.min(WORLD.h-40,en.y));
       }
     });
 
-    if(target){
-      let ang=Math.atan2(target.y-g.y,target.x-g.x);
-      g.x+=Math.cos(ang)*2.2; g.y+=Math.sin(ang)*2.2;
-      if(dist(g,target)<50 && g.atkCd<=0){
-        g.atkCd=40;
-        target.hp-=15;
-        effects.push({x:target.x,y:target.y-10,t:14,type:'dmg',txt:'15',col:'#ff0000'});
-        if(target===player && player.hp<=0) killPlayer(net.myId,'guard',true);
-      }
+    if(now-lastEnemySync>150){
+      broadcast({t:'syncEn',en:enemies.map(e=>({x:e.x,y:e.y,hp:e.hp,dead:e.dead,atkCd:e.atkCd}))});
+      lastEnemySync=now;
     }
-    if(g.atkCd>0) g.atkCd--;
+  } else {
+    enemies.forEach(en=>{
+      if(!en.dead && !en.isDragon){
+        en.x+=en.vx; en.y+=en.vy; en.x=Math.max(40,Math.min(WORLD.w-40,en.x)); en.y=Math.max(40,Math.min(WORLD.h-40,en.y));
+      }
+    });
+  }
+
+  npcs.forEach(n=>{ n.x+=n.vx; n.y+=n.vy; if(n.x<40||n.x>WORLD.w-40) n.vx*=-1; if(n.y<40||n.y>WORLD.h-40) n.vy*=-1; if(n.chatT>0) n.chatT--; if(n.restT>0) n.restT--; if(n.restT<=0){ n.chat=['Wah!','Aman?','Jalan-jalan...','Hati-hati!'][Math.floor(Math.random()*4)]; n.chatT=180; n.restT=600+Math.random()*600; n.vx=(Math.random()-0.5)*1.2; n.vy=(Math.random()-0.5)*1.2; } });
+
+  [...guards,...demonGuards].forEach(g=>{
+    if(g.dead){ if(g.respawnT>0) g.respawnT--; if(g.respawnT<=0){ g.dead=false; g.hp=g.maxHp; } return; }
+    let target=null, md=400;
+    if(player.faction!==g.faction && !player.dead && dist(g,player)<md){ target=player; md=dist(g,player); }
+    Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction!==g.faction && dist(g,rp)<md){ target=rp; md=dist(g,rp); }});
+    enemies.forEach(en=>{ if(!en.dead && dist(g,en)<md){ target=en; md=dist(g,en); }});
+    
+    if(target){
+      let dx=target.x-g.x, dy=target.y-g.y; let d=Math.sqrt(dx*dx+dy*dy);
+      if(d>40){ g.x+=(dx/d)*2.5; g.y+=(dy/d)*2.5; }
+      if(g.atkCd>0) g.atkCd--;
+      if(g.atkCd<=0 && d<50){ g.atkCd=60; target.hp-=12; if(target===player && player.hp<=0) killPlayer(net.myId,'guard',true); else if(target!==player && target.hp<=0){ if(target.emoji && !target.isDragon && !target.isMiniDragon) killEnemy(target); else if(target.id){ target.dead=true; broadcast({t:'playerDied',victimId:target.id,killerId:'guard'}); setTimeout(()=>{target.hp=target.maxHp; target.dead=false;},3000);} } effects.push({x:target.x,y:target.y-10,t:16,type:'dmg',txt:'-12',col:'#ff0000'}); }
+    } else {
+      let cx=g.faction==='human'?HUMAN_CASTLE.x:DEMON_CASTLE.x; let cy=g.faction==='human'?HUMAN_CASTLE.y:DEMON_CASTLE.y;
+      let dx=cx-g.x, dy=cy-g.y; let d=Math.sqrt(dx*dx+dy*dy);
+      if(d>200){ g.x+=(dx/d)*1.5; g.y+=(dy/d)*1.5; }
+    }
   });
 
-  // Tower attack logic
   towers.forEach(t=>{
     if(t.dead) return;
     if(t.atkCd>0) t.atkCd--;
-    if(t.atkCd<=0){
-      let target=null, md=380;
-      if(!player.dead && player.faction!==t.faction && dist(t,player)<md){ target=player; md=dist(t,player); }
-      Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction!==t.faction && dist(t,rp)<md){ target=rp; md=dist(t,rp); }});
-      enemies.forEach(en=>{
-        if(!en.dead && t.faction==='human' && dist(t,en)<md){ target=en; md=dist(t,en); }
-      });
-      if(target){
-        t.atkCd=50;
-        let proj={x:t.x,y:t.y,vx:Math.cos(Math.atan2(target.y-t.y,target.x-t.x))*12,vy:Math.sin(Math.atan2(target.y-t.y,target.x-t.x))*12,dmg:35,emoji:t.faction==='human'?'🏹':'🔥',faction:t.faction,ownerId:'tower',life:40};
+    if(t.atkCd<=0 && (net.isHost || !net.roomCode)){
+      let tgt=null, md=350;
+      if(player.faction!==t.faction && !player.dead && dist(t,player)<md){ tgt=player; md=dist(t,player); }
+      Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && rp.faction!==t.faction && dist(t,rp)<md){ tgt=rp; md=dist(t,rp); }});
+      enemies.forEach(en=>{ if(!en.dead && dist(t,en)<md){ tgt=en; md=dist(t,en); }});
+      if(tgt){
+        t.atkCd=70;
+        let ang=Math.atan2(tgt.y-t.y, tgt.x-t.x);
+        let proj={x:t.x,y:t.y,vx:Math.cos(ang)*11,vy:Math.sin(ang)*11,dmg:25,emoji:'⚡',faction:t.faction,ownerId:'tower',life:50};
         projectiles.push(proj);
         if(net.isHost) broadcast({t:'proj',proj});
       }
     }
   });
 
-  // Host update enemies and sync to clients
-  if(net.isHost){
-    enemies.forEach(en=>{
-      if(en.dead) return;
-      if(en.isDragon){
-        doDragonSkills(en);
-        let t=null, md=800;
-        if(!player.dead && dist(en,player)<md){ t=player; md=dist(en,player); }
-        Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && dist(en,rp)<md){ t=rp; md=dist(en,rp); }});
-        if(t){
-          let ang=Math.atan2(t.y-en.y,t.x-en.x); let spd=en.enraged?2.2:1.3;
-          en.x+=Math.cos(ang)*spd; en.y+=Math.sin(ang)*spd;
-          if(en.atkCd<=0 && dist(en,t)<90){
-            en.atkCd=en.enraged?25:45; let dmg=en.enraged?45:28;
-            if(t===player){ player.hp-=dmg; effects.push({x:player.x,y:player.y-10,t:14,type:'dmg',txt:dmg+'',col:'#ff0000'}); }
-            else { t.hp-=dmg; }
-          }
-        }
-        if(en.atkCd>0) en.atkCd--;
-      } else if(en.isMiniDragon){
-        let t=null, md=500;
-        if(!player.dead && dist(en,player)<md){ t=player; md=dist(en,player); }
-        Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && dist(en,rp)<md){ t=rp; md=dist(en,rp); }});
-        if(t){
-          let ang=Math.atan2(t.y-en.y,t.x-en.x);
-          en.x+=Math.cos(ang)*2.0; en.y+=Math.sin(ang)*2.0;
-          if(en.atkCd<=0 && dist(en,t)<60){ en.atkCd=35; t.hp-=18; }
-        }
-        if(en.atkCd>0) en.atkCd--; en.x+=en.vx; en.y+=en.vy;
-      } else {
-        en.x+=en.vx; en.y+=en.vy;
-        if(Math.random()<0.02){ en.vx=(Math.random()-0.5)*1.6; en.vy=(Math.random()-0.5)*1.6; }
-        if(en.x<0||en.x>WORLD.w) en.vx*=-1; if(en.y<0||en.y>WORLD.h) en.vy*=-1;
-        let t=null, md=350;
-        if(!player.dead && dist(en,player)<md){ t=player; md=dist(en,player); }
-        Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead && dist(en,rp)<md){ t=rp; md=dist(en,rp); }});
-        if(t){
-          let ang=Math.atan2(t.y-en.y,t.x-en.x);
-          en.x+=Math.cos(ang)*1.1; en.y+=Math.sin(ang)*1.1;
-          if(en.atkCd<=0 && dist(en,t)<50){ en.atkCd=40; t.hp-=10; }
-        }
-        if(en.atkCd>0) en.atkCd--;
-      }
-    });
-
-    if(now-lastSyncSend>100){
-      broadcast({t:'enemiesSync',enemies:enemies.map(e=>({x:e.x,y:e.y,hp:e.hp,dead:e.dead}))});
-      lastSyncSend=now;
-    }
-  }
-
-  // Projectiles update & Collision (termasuk Kastil Musuh & Tower)
   for(let i=projectiles.length-1;i>=0;i--){
-    let pr=projectiles[i];
-    pr.x+=pr.vx; pr.y+=pr.vy; pr.life--;
-    if(pr.life<=0){
-      if(pr.isMage){
-        effects.push({x:pr.x,y:pr.y,t:22,type:'explosion',r:120,col:'#7c4dff'});
-        enemies.forEach(en=>{ if(!en.dead && dist(pr,en)<120){ en.hp-=pr.dmg; if(en.hp<=0) killEnemy(en); }});
-      }
-      projectiles.splice(i,1); continue;
-    }
-
+    let pr=projectiles[i]; pr.x+=pr.vx; pr.y+=pr.vy; pr.life--;
     let hit=false;
-    // Cek tabrakan proyektil dengan Kastil Musuh (Kastil Human bisa diserang demon, Kastil Demon bisa diserang human)
-    if(pr.faction==='demon' && !HUMAN_CASTLE.dead && dist(pr,HUMAN_CASTLE)<200){
-      HUMAN_CASTLE.hp-=pr.dmg;
-      hit=true;
-      if(net.isHost) broadcast({t:'castle',faction:'human',hp:HUMAN_CASTLE.hp});
-    } else if(pr.faction==='human' && !DEMON_CASTLE.dead && dist(pr,DEMON_CASTLE)<200){
-      DEMON_CASTLE.hp-=pr.dmg;
-      hit=true;
-      if(net.isHost) broadcast({t:'castle',faction:'demon',hp:DEMON_CASTLE.hp});
+    if(pr.ownerId!==net.myId && pr.faction!==player.faction && !player.dead && dist(pr,player)<24){
+      player.hp-=pr.dmg; hit=true;
+      effects.push({x:player.x,y:player.y-10,t:16,type:'dmg',txt:'-'+Math.floor(pr.dmg),col:'#ff0000'});
+      if(player.hp<=0) killPlayer(net.myId,pr.ownerId,true);
     }
-
-    // Cek tabrakan dengan Tower
-    towers.forEach(tw=>{
-      if(!tw.dead && tw.faction!==pr.faction && dist(pr,tw)<40){
-        tw.hp-=pr.dmg;
-        hit=true;
-        if(tw.hp<=0) tw.dead=true;
+    Object.values(remotePlayers).forEach(rp=>{
+      if(!hit && pr.faction!==rp.faction && !rp.dead && dist(pr,rp)<24){
+        hit=true; rp.hp-=pr.dmg;
+        effects.push({x:rp.x,y:rp.y-10,t:16,type:'dmg',txt:'-'+Math.floor(pr.dmg),col:'#ff0000'});
+        if(rp.hp<=0){ rp.dead=true; if(pr.ownerId===net.myId) player.kills++; broadcast({t:'playerDied',victimId:rp.id,killerId:pr.ownerId}); setTimeout(()=>{rp.hp=rp.maxHp; rp.dead=false;},3000);}
+      } else if(!hit && pr.isHeal && pr.faction===rp.faction && !rp.dead && dist(pr,rp)<26){
+        rp.hp=Math.min(rp.maxHp,rp.hp+pr.dmg); hit=true;
+        effects.push({x:rp.x,y:rp.y-10,t:16,type:'dmg',txt:'+'+Math.floor(pr.dmg),col:'#00e676'});
       }
     });
-
     enemies.forEach(en=>{
-      if(!en.dead && dist(pr,en)<26){
-        if(!pr.isHeal){ en.hp-=pr.dmg; if(en.hp<=0) killEnemy(en); }
-        hit=true;
+      if(!hit && !en.dead && dist(pr,en)<26){
+        en.hp-=pr.dmg; if(en.hp<=0) killEnemy(en); hit=true;
       }
     });
-
+    [...guards,...demonGuards].forEach(g=>{
+      if(!hit && !g.dead && pr.faction!==g.faction && dist(pr,g)<26){ g.hp-=pr.dmg; if(g.hp<=0){ g.dead=true; g.respawnT=600; if(pr.ownerId===net.myId) player.gold+=30;} hit=true; }
+    });
+    towers.forEach(t=>{
+      if(!hit && !t.dead && pr.faction!==t.faction && dist(pr,t)<30){ t.hp-=pr.dmg; if(t.hp<=0) t.dead=true; hit=true; }
+    });
+    
     if(!hit){
-      if(pr.faction!==player.faction && !player.dead && dist(pr,player)<26){
-        if(!pr.isHeal){
-          player.hp-=pr.dmg;
-          effects.push({x:player.x,y:player.y-10,t:14,type:'dmg',txt:Math.floor(pr.dmg)+'',col:'#ff0000'});
-          if(player.hp<=0 && !player.dead){ player.hp=0; killPlayer(net.myId,pr.ownerId,true); }
+      [HUMAN_CASTLE,DEMON_CASTLE].forEach(c=>{
+        if(!c.dead && c.faction!==pr.faction && pr.x>c.x && pr.x<c.x+c.w && pr.y>c.y && pr.y<c.y+c.h){
+          c.hp-=pr.dmg; hit=true;
+          if(net.isHost) broadcast({t:'castle',faction:c.faction,hp:c.hp});
         }
-        hit=true;
-      }
-      if(pr.isHeal){
-        if(pr.faction===player.faction && !player.dead && dist(pr,player)<26){
-          player.hp=Math.min(player.maxHp,player.hp+pr.dmg);
-          effects.push({x:player.x,y:player.y-12,t:18,type:'dmg',txt:'+'+Math.floor(pr.dmg),col:'#00e676'});
-          hit=true;
-        }
-        Object.values(remotePlayers).forEach(rp=>{
-          if(!rp.dead && rp.faction===pr.faction && dist(pr,rp)<26){
-            rp.hp=Math.min(rp.maxHp,rp.hp+pr.dmg);
-            hit=true;
-          } else if(!rp.dead && rp.faction!==pr.faction && dist(pr,rp)<26){
-            // Hati healer juga bisa melukai musuh jika mengenai player lawan
-            rp.hp-=pr.dmg;
-            effects.push({x:rp.x,y:rp.y-10,t:14,type:'dmg',txt:Math.floor(pr.dmg)+'',col:'#ff0000'});
-            hit=true;
-          }
-        });
-      } else {
-        Object.values(remotePlayers).forEach(rp=>{
-          if(!rp.dead && rp.faction!==pr.faction && dist(pr,rp)<26){
-            rp.hp-=pr.dmg;
-            if(rp.hp<=0){ rp.dead=true; if(pr.ownerId===net.myId) player.kills++; broadcast({t:'playerDied',victimId:rp.id,killerId:pr.ownerId}); setTimeout(()=>{rp.hp=rp.maxHp; rp.dead=false;},3000);}
-            hit=true;
-          }
-        });
-      }
+      });
     }
-    if(hit) projectiles.splice(i,1);
+    
+    if(pr.life<=0||hit||pr.x<0||pr.x>WORLD.w||pr.y<0||pr.y>WORLD.h) projectiles.splice(i,1);
   }
 
   Object.values(remotePlayers).forEach(rp=>{
-    if(rp.targetX){ rp.x+=(rp.targetX-rp.x)*0.18; rp.y+=(rp.targetY-rp.y)*0.18; }
-    if(rp.atkAnim>0) rp.atkAnim--; if(rp.skillAnim>0) rp.skillAnim--; if(rp.chatT>0) rp.chatT--; if(rp.dashT>0) rp.dashT--;
-  });
-  effects.forEach(e=>e.t--); effects=effects.filter(e=>e.t>0);
-
-  if(HUMAN_CASTLE.hp<=0 && !HUMAN_CASTLE.dead){ HUMAN_CASTLE.dead=true; HUMAN_CASTLE.hp=0; if(playerFaction==='human') showGameOver(false,'Kastil Human hancur!'); else showGameOver(true,'Kastil Human hancur - Demon menang!'); }
-  if(DEMON_CASTLE.hp<=0 && !DEMON_CASTLE.dead){ DEMON_CASTLE.dead=true; DEMON_CASTLE.hp=0; if(playerFaction==='demon') showGameOver(false,'Kastil Demon hancur!'); else showGameOver(true,'Kastil Demon hancur - Human menang!'); }
-  if(quest.current>=quest.target && !gameWon){ gameWon=true; showGameOver(true,'Quest selesai!'); }
-  updateBars();
-}
-
-function showGameOver(win,msg){
-  gameState='OVER'; document.getElementById('gameOver').classList.add('on');
-  document.getElementById('goTitle').textContent=win?'🏆 MENANG!':'💀 KALAH!';
-  document.getElementById('gameOverTxt').textContent=msg;
-  let board=document.getElementById('scoreBoard');
-  let all=[{name:playerName,kills:player.kills,gold:Math.floor(player.gold),faction:playerFaction,cls:playerClass,isMe:true},...Object.values(net.lobbyPlayers||{}).filter(p=>p.id!==net.myId).map(p=>({name:p.name,kills:p.kills||0,gold:p.gold||0,faction:p.faction,cls:p.cls,isMe:false}))];
-  all.sort((a,b)=>b.kills-a.kills);
-  board.innerHTML=all.map((p,i)=>`<div class="lobbyPlayer"><div class="lobbyAvatar">${CLASS_DATA[p.cls]?.emoji||'❓'}</div><div style="flex:1"><b>#${i+1} ${p.name}</b> ${p.isMe?'(KAMU)':''}<br><small>Kills:${p.kills} Gold:${p.gold}</small></div></div>`).join('');
-}
-
-function leaveServer(){
-  isLeaving=true;
-  let wasHost=net.isHost; let oldCode=net.roomCode;
-  try{
-    if(net){
-      if(!net.isHost && net.connToHost){ try{ net.connToHost.send({t:'leave',id:net.myId}); }catch(e){} setTimeout(()=>{ try{ net.connToHost.close(); }catch(e){} },100); }
-      if(net.conns){ net.conns.forEach(c=>{ try{ c.close(); }catch(e){} }); }
-      if(net.peer){ try{ net.peer.destroy(); }catch(e){} }
+    if(!rp.dead){
+      let dx=rp.targetX-rp.x, dy=rp.targetY-rp.y;
+      rp.x+=dx*0.2; rp.y+=dy*0.2;
+      if(rp.atkAnim>0) rp.atkAnim--;
+      if(rp.skillAnim>0) rp.skillAnim--;
+      if(rp.chatT>0) rp.chatT--;
+      if(rp.dashT>0) rp.dashT--;
+      if(rp.stunned>0) rp.stunned--;
+      if(rp.burnT>0) rp.burnT--;
     }
-  }catch(e){}
-  if(wasHost && oldCode && oldCode!=='GLOBAL'){ try{ let reg=JSON.parse(localStorage.getItem('isekai_rooms')||'[]'); reg=reg.filter(r=>r.code!==oldCode); localStorage.setItem('isekai_rooms',JSON.stringify(reg)); }catch(e){} }
-  setTimeout(()=>{
-    net={peer:null,isHost:false,roomCode:null,connToHost:null,conns:[],myId:null,lobbyPlayers:{},ready:{},started:false,chatLog:[],lastSeen:{}};
-    remotePlayers={}; gameState='MENU'; gameWon=false;
-    try{ document.getElementById('gameOver').classList.remove('on'); }catch(e){} try{ document.getElementById('chatInputWrap').classList.remove('on'); }catch(e){}
-    document.querySelectorAll('.modal').forEach(m=>m.classList.remove('on'));
-    openM('main'); refreshRooms();
-    try{ document.getElementById('netChip').textContent='🔴 Offline'; }catch(e){}
-    showMsg(wasHost?('🏠 Room '+oldCode+' terhapus - FIXED tidak balik lagi'):'✅ Keluar berhasil - FIXED tidak balik lagi');
-    isLeaving=false;
-  },300);
+  });
+
+  if(player.level===1 && quest.current>=quest.target){ player.level=2; player.maxHp+=50; player.atk+=10; player.maxMp+=30; quest.target=30; quest.current=0; showMsg('LEVEL UP! +Stats'); player.hp=player.maxHp; player.mp=player.maxMp; }
+
+  updateBars();
+  if(net.roomCode){ try{ if(net.isHost) broadcast({t:'pos',id:net.myId,x:player.x,y:player.y,ang:player.facing}); else net.connToHost?.send({t:'pos',id:net.myId,x:player.x,y:player.y,ang:player.facing}); }catch(e){} }
+  
+  if(HUMAN_CASTLE.hp<=0 && !HUMAN_CASTLE.dead){ HUMAN_CASTLE.dead=true; setTimeout(()=>{endGame('demon');},2000); }
+  if(DEMON_CASTLE.hp<=0 && !DEMON_CASTLE.dead){ DEMON_CASTLE.dead=true; setTimeout(()=>{endGame('human');},2000); }
 }
-function returnToLobby(){ document.getElementById('gameOver').classList.remove('on'); if(net.roomCode){ openM('lobby'); gameState='LOBBY'; } else openM('roomList'); }
-function restartLocal(){ document.getElementById('gameOver').classList.remove('on'); initGame(); gameState='PLAYING'; }
+
+function endGame(winner){
+  if(gameWon) return; gameWon=true; gameState='END';
+  document.getElementById('gameOver').classList.add('on');
+  let isWin = winner===player.faction;
+  document.getElementById('goTitle').textContent=isWin?'🏆 KAMU MENANG!':'💀 KAMU KALAH!';
+  document.getElementById('goTitle').style.color=isWin?'#ffd54f':'#ff3b3b';
+  document.getElementById('gameOverTxt').textContent=winner==='human'?'Fraksi HUMAN menghancurkan Kastil DEMON!':'Fraksi DEMON menghancurkan Kastil HUMAN!';
+  let html=`<h3>Papan Skor</h3><table style="width:100%;text-align:left;margin-top:10px"><tr><th>Nama</th><th>Fraksi</th><th>Kills</th></tr>`;
+  let all=[player, ...Object.values(remotePlayers)];
+  all.sort((a,b)=>b.kills-a.kills);
+  all.forEach(p=>{ html+=`<tr><td>${p.emoji} ${p.name||playerName} ${p===player?'(KAMU)':''}</td><td>${p.faction==='human'?'⚔ HUMAN':'😈 DEMON'}</td><td>${p.kills}</td></tr>`; });
+  html+=`</table>`;
+  document.getElementById('scoreBoard').innerHTML=html;
+}
+
+function returnToLobby(){
+  document.getElementById('gameOver').classList.remove('on');
+  gameWon=false; quest.current=0; quest.target=15; player.level=1; player.gold=0; player.kills=0; player.hp=player.maxHp; player.mp=player.maxMp; player.dead=false;
+  HUMAN_CASTLE.hp=HUMAN_CASTLE.maxHp; HUMAN_CASTLE.dead=false; DEMON_CASTLE.hp=DEMON_CASTLE.maxHp; DEMON_CASTLE.dead=false;
+  enemies.forEach(en=>{ en.hp=en.maxHp; en.dead=false; if(en.isDragon){ en.x=3000; en.y=2000; en.enraged=false; } });
+  towers.forEach(t=>t.dead=false); guards.forEach(g=>{g.dead=false;g.hp=g.maxHp;}); demonGuards.forEach(g=>{g.dead=false;g.hp=g.maxHp;});
+  player.x=player.faction==='human'?HUMAN_CITY.cx:DEMON_CITY.cx; player.y=player.faction==='human'?HUMAN_CITY.cy:DEMON_CITY.cy;
+  gameState='LOBBY'; net.started=false; openM('lobby'); closeM('main');
+  renderLobby();
+}
+
+function leaveServer(){ isLeaving=true; try{ if(net.isHost) broadcast({t:'leave',id:net.myId}); else net.connToHost?.send({t:'leave',id:net.myId}); }catch(e){} setTimeout(()=>{ location.reload(); },300); }
+function restartLocal(){ returnToLobby(); }
 
 function draw(){
-  ctx.clearRect(0,0,VIEW_W,VIEW_H);
-  ctx.save(); ctx.translate(-camera.x,-camera.y);
-  ctx.fillStyle='#7bc87a'; ctx.fillRect(0,0,2800,4000);
-  ctx.fillStyle='#c2b280'; ctx.fillRect(2800,0,400,4000);
-  ctx.fillStyle='#8a6a6a'; ctx.fillRect(3200,0,2800,4000);
-  ctx.strokeStyle='#d2b48c'; ctx.lineWidth=18; ctx.globalAlpha=0.6; ctx.beginPath(); paths.forEach(p=>{ ctx.moveTo(p.x1,p.y1); ctx.lineTo(p.x2,p.y2); }); ctx.stroke(); ctx.globalAlpha=1;
-  rivers.forEach(r=>{ ctx.fillStyle='#4a8ac6'; ctx.fillRect(r.x,r.y,r.w,r.h); ctx.fillStyle='#6aa8e6'; ctx.fillRect(r.x+30,r.y,r.w-60,r.h); });
-  bridges.forEach(b=>{ ctx.fillStyle='#8b5a2b'; ctx.fillRect(b.x,b.y,b.w,b.h); ctx.fillStyle='#a67c52'; ctx.fillRect(b.x,b.y,b.w,10); ctx.fillRect(b.x,b.y+b.h-10,b.w,10); ctx.fillStyle='#fff'; ctx.font='10px sans-serif'; ctx.fillText(b.name,b.x+10,b.y-8); });
-  ctx.fillStyle='#8fbc8f'; ctx.globalAlpha=0.5; ctx.fillRect(HUMAN_CITY.x,HUMAN_CITY.y,HUMAN_CITY.w,HUMAN_CITY.h); ctx.globalAlpha=1; ctx.strokeStyle='#4a7a52'; ctx.lineWidth=3; ctx.strokeRect(HUMAN_CITY.x,HUMAN_CITY.y,HUMAN_CITY.w,HUMAN_CITY.h);
-  ctx.fillStyle='#8f7a7a'; ctx.globalAlpha=0.5; ctx.fillRect(DEMON_CITY.x,DEMON_CITY.y,DEMON_CITY.w,DEMON_CITY.h); ctx.globalAlpha=1; ctx.strokeStyle='#7a4a4a'; ctx.lineWidth=3; ctx.strokeRect(DEMON_CITY.x,DEMON_CITY.y,DEMON_CITY.w,DEMON_CITY.h);
-  trees.forEach(t=>{ ctx.font=Math.floor(28*t.scale)+'px serif'; ctx.fillText(t.emoji,t.x-14,t.y+10); });
-  rocks.forEach(r=>{ ctx.font='18px serif'; ctx.fillText(r.emoji,r.x-9,r.y+5); });
-  ruins.forEach(r=>{ if(r.isArena){ ctx.fillStyle='#5a4a3a'; ctx.beginPath(); ctx.arc(r.x,r.y,150,0,Math.PI*2); ctx.fill(); ctx.strokeStyle='#ffd54f'; ctx.lineWidth=4; ctx.beginPath(); ctx.arc(r.x,r.y,150,0,Math.PI*2); ctx.stroke(); ctx.font='50px serif'; ctx.fillText(r.emoji,r.x-25,r.y+15); ctx.font='bold 12px sans-serif'; ctx.fillStyle='#ffd54f'; ctx.fillText(r.name,r.x-110,r.y-160); } else { ctx.font='36px serif'; ctx.fillText(r.emoji,r.x-18,r.y+8); if(!r.looted){ ctx.fillStyle='#ffd54f'; ctx.beginPath(); ctx.arc(r.x,r.y-r.h/2-10,6,0,Math.PI*2); ctx.fill(); } } });
+  ctx.fillStyle='#3a6a45'; ctx.fillRect(0,0,VIEW_W,VIEW_H);
+  if(gameState!=='PLAYING') return;
 
-  // Kotak gelap kecil di setiap bangunan agar dapat melihatnya secara jelas (Background box for buildings)
+  ctx.save();
+  ctx.translate(Math.floor(-camera.x),Math.floor(-camera.y));
+
+  // Background pattern
+  ctx.fillStyle='#2c5034'; ctx.globalAlpha=0.4;
+  for(let x=Math.floor(camera.x/100)*100;x<camera.x+VIEW_W;x+=100){ for(let y=Math.floor(camera.y/100)*100;y<camera.y+VIEW_H;y+=100){ ctx.fillRect(x+1,y+1,98,98); } }
+  ctx.globalAlpha=1.0;
+
+  paths.forEach(p=>{ ctx.strokeStyle='#ffffff22'; ctx.lineWidth=60; ctx.lineCap='round'; ctx.beginPath(); ctx.moveTo(p.x1,p.y1); ctx.lineTo(p.x2,p.y2); ctx.stroke(); });
+  rivers.forEach(r=>{ ctx.fillStyle='#3b82ff66'; ctx.fillRect(r.x,r.y,r.w,r.h); });
+  bridges.forEach(b=>{ ctx.fillStyle='#5d4037'; ctx.fillRect(b.x,b.y,b.w,b.h); ctx.fillStyle='#3e2723'; ctx.fillRect(b.x,b.y,b.w,10); ctx.fillRect(b.x,b.y+b.h-10,b.w,10); });
+
+  ctx.strokeStyle='#ffffff11'; ctx.lineWidth=4; ctx.strokeRect(0,0,WORLD.w,WORLD.h);
+
+  trees.forEach(t=>{ if(t.x>camera.x-100 && t.x<camera.x+VIEW_W+100 && t.y>camera.y-100 && t.y<camera.y+VIEW_H+100){ ctx.font=Math.floor(50*t.scale)+'px serif'; ctx.fillText(t.emoji,t.x-25*t.scale,t.y+15*t.scale); }});
+  rocks.forEach(r=>{ if(r.x>camera.x-100 && r.x<camera.x+VIEW_W+100 && r.y>camera.y-100 && r.y<camera.y+VIEW_H+100){ ctx.font='36px serif'; ctx.fillText(r.emoji,r.x-18,r.y+12); }});
+
+  ctx.fillStyle='#4caf5022'; ctx.fillRect(HUMAN_CITY.x,HUMAN_CITY.y,HUMAN_CITY.w,HUMAN_CITY.h);
+  ctx.fillStyle='#ff3b3b22'; ctx.fillRect(DEMON_CITY.x,DEMON_CITY.y,DEMON_CITY.w,DEMON_CITY.h);
+
+  ruins.forEach(r=>{
+    ctx.fillStyle='#00000044'; ctx.fillRect(r.x,r.y,r.w,r.h);
+    ctx.font='50px serif'; ctx.fillText(r.emoji,r.x+r.w/2-25,r.y+r.h/2+10);
+    ctx.font='12px sans-serif'; ctx.fillStyle=r.looted?'#888':'#ffd54f'; ctx.fillText(r.name+(r.looted?' (Looted)':''),r.x+5,r.y-5);
+  });
+
   buildings.forEach(b=>{
-    ctx.fillStyle='rgba(0, 0, 0, 0.7)';
-    ctx.strokeStyle='#3a6a45';
-    ctx.lineWidth=1.5;
-    ctx.beginPath();
-    ctx.roundRect(b.x-55, b.y-38, 110, 52, 6);
-    ctx.fill();
-    ctx.stroke();
-
-    ctx.font='26px serif'; ctx.fillText(b.emoji,b.x-13,b.y+6);
-    ctx.font='bold 9px sans-serif'; ctx.fillStyle='#ffd54f';
-    let txtW=ctx.measureText(b.name).width;
-    ctx.fillText(b.name,b.x-txtW/2,b.y-22);
+    // Dark box fix
+    ctx.fillStyle='rgba(0,0,0,0.6)';
+    ctx.beginPath(); ctx.roundRect(b.x-24, b.y-34, 48, 48, 8); ctx.fill();
+    
+    ctx.font='30px serif'; ctx.fillText(b.emoji,b.x-15,b.y+8);
+    ctx.font='9px sans-serif'; ctx.fillStyle='#ffd54f'; ctx.fillText(b.name,b.x-16,b.y-26);
   });
 
-  towers.forEach(t=>{ if(t.dead) return; ctx.font='30px serif'; ctx.fillText(t.emoji,t.x-15,t.y+10); ctx.fillStyle='#000'; ctx.fillRect(t.x-20,t.y-18,40,4); ctx.fillStyle=t.faction==='human'?'#4caf50':'#ff3b3b'; ctx.fillRect(t.x-20,t.y-18,40*t.hp/t.maxHp,4); });
-  [HUMAN_CASTLE,DEMON_CASTLE].forEach(c=>{ if(c.dead){ ctx.font='40px serif'; ctx.fillText('💥',c.x+c.w/2-20,c.y+c.h/2); return; } ctx.fillStyle=c.faction==='human'?'#8fbc8f':'#8f7a7a'; ctx.fillRect(c.x,c.y,c.w,c.h); ctx.strokeStyle=c.faction==='human'?'#4caf50':'#ff3b3b'; ctx.lineWidth=4; ctx.strokeRect(c.x,c.y,c.w,c.h); ctx.font='60px serif'; ctx.fillText(c.faction==='human'?'🏰':'🏯',c.x+c.w/2-30,c.y+c.h/2+10); ctx.fillStyle='#000'; ctx.fillRect(c.x,c.y-16,c.w,12); ctx.fillStyle=c.faction==='human'?'#4caf50':'#ff3b3b'; ctx.fillRect(c.x,c.y-16,c.w*c.hp/c.maxHp,12); });
-  ctx.fillStyle='#4a2a1a'; ctx.beginPath(); ctx.arc(3000,2000,260,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#6a3a2a'; ctx.beginPath(); ctx.arc(3000,2000,220,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#ff5722'; ctx.globalAlpha=0.3; ctx.beginPath(); ctx.arc(3000,2000,180,0,Math.PI*2); ctx.fill(); ctx.globalAlpha=1;
-  [...guards,...demonGuards].forEach(g=>{ if(g.dead){ if(g.respawnT>0){ ctx.fillStyle='#0008'; ctx.font='10px sans-serif'; ctx.fillText('Respawn '+(g.respawnT/60).toFixed(1)+'s',g.x-20,g.y-20); } return; } ctx.font='24px serif'; ctx.fillText(g.emoji,g.x-12,g.y+6); ctx.fillStyle='#000'; ctx.fillRect(g.x-16,g.y-14,32,4); ctx.fillStyle='#4caf50'; ctx.fillRect(g.x-16,g.y-14,32*g.hp/g.maxHp,4); });
-  npcs.forEach(n=>{ ctx.font='22px serif'; ctx.fillText(n.emoji,n.x-11,n.y+6); if(n.chatT>0&&n.chat){ ctx.fillStyle='#ffffffee'; ctx.strokeStyle='#000'; ctx.lineWidth=1; let bw=Math.min(100,ctx.measureText(n.chat).width+12); ctx.beginPath(); ctx.roundRect(n.x-bw/2,n.y-30,bw,16,6); ctx.fill(); ctx.stroke(); ctx.fillStyle='#000'; ctx.font='9px sans-serif'; ctx.fillText(n.chat,n.x-bw/2+4,n.y-19); } });
-  enemies.forEach(en=>{ if(en.dead) return; if(en.isDragon){ let sz=en.enraged?78:64; ctx.font=sz+'px serif'; ctx.fillText(en.emoji,en.x-28,en.y+10); ctx.fillStyle='#000'; ctx.fillRect(en.x-60,en.y-40,120,10); ctx.fillStyle=en.enraged?'#ff0000':'#ff5252'; ctx.fillRect(en.x-60,en.y-40,120*en.hp/en.maxHp,10); ctx.font='bold 12px sans-serif'; ctx.fillStyle=en.enraged?'#ff0000':'#ffcc00'; ctx.fillText(en.enraged?'🐲 NAGA ENRAGE OP! 3 SKILL':'🐲 NAGA OP 6000 HP 3 SKILL',en.x-110,en.y-50); } else if(en.isMiniDragon){ ctx.font='32px serif'; ctx.fillText(en.emoji,en.x-16,en.y+8); ctx.fillStyle='#000'; ctx.fillRect(en.x-18,en.y-18,36,4); ctx.fillStyle='#ff9800'; ctx.fillRect(en.x-18,en.y-18,36*en.hp/en.maxHp,4); } else { ctx.font='24px serif'; ctx.fillText(en.emoji,en.x-12,en.y+6); ctx.fillStyle='#000'; ctx.fillRect(en.x-16,en.y-18,32,4); ctx.fillStyle='#ff5252'; ctx.fillRect(en.x-16,en.y-18,32*en.hp/en.maxHp,4); } });
-  projectiles.forEach(pr=>{ ctx.font='18px serif'; ctx.fillText(pr.emoji,pr.x-9,pr.y+6); if(pr.isHeal){ ctx.strokeStyle='#00e676'; ctx.lineWidth=1; ctx.globalAlpha=0.4; ctx.beginPath(); ctx.arc(pr.x,pr.y,14,0,Math.PI*2); ctx.stroke(); ctx.globalAlpha=1; } });
-  Object.values(remotePlayers).forEach(rp=>{ if(rp.dead){ ctx.font='14px serif'; ctx.fillText('💀',rp.x-7,rp.y+5); return; } ctx.font='22px serif'; ctx.fillText(rp.emoji,rp.x-11,rp.y+6); ctx.font='bold 10px sans-serif'; ctx.fillStyle=rp.faction==='demon'?'#ffaaaa':'#aaffaa'; let nameW=ctx.measureText(rp.name).width; ctx.strokeStyle='#000'; ctx.lineWidth=3; ctx.strokeText(rp.name,rp.x-nameW/2,rp.y+22); ctx.fillText(rp.name,rp.x-nameW/2,rp.y+22); if(rp.hp<rp.maxHp){ ctx.fillStyle='#000'; ctx.fillRect(rp.x-14,rp.y-14,28,3); ctx.fillStyle='#4caf50'; ctx.fillRect(rp.x-14,rp.y-14,28*rp.hp/rp.maxHp,3); } if(rp.chatT>0&&rp.chat){ ctx.fillStyle='#ffffffee'; ctx.strokeStyle='#000'; ctx.lineWidth=1.5; let bw=Math.min(120,ctx.measureText(rp.chat).width+16); ctx.beginPath(); ctx.roundRect(rp.x-bw/2,rp.y-40,bw,20,8); ctx.fill(); ctx.stroke(); ctx.fillStyle='#000'; ctx.font='11px sans-serif'; ctx.fillText(rp.chat,rp.x-bw/2+6,rp.y-26); } });
-  ctx.font='24px serif'; ctx.fillText(CLASS_DATA[player.cls].emoji,player.x-12,player.y+8); if(player.stunned>0){ ctx.font='bold 14px sans-serif'; ctx.fillStyle='#ffff00'; ctx.fillText('😵 STUN '+(player.stunned/60).toFixed(1)+'s',player.x-30,player.y-50); } ctx.font='bold 11px sans-serif'; ctx.fillStyle='#ffd54f'; let pw=ctx.measureText(playerName).width; ctx.strokeStyle='#000'; ctx.lineWidth=3; ctx.strokeText(playerName,player.x-pw/2,player.y+24); ctx.fillText(playerName,player.x-pw/2,player.y+24); if(player.chatT>0&&player.chat){ ctx.fillStyle='#ffffccee'; ctx.strokeStyle='#000'; ctx.lineWidth=1.5; let bw=Math.min(140,ctx.measureText(player.chat).width+16); ctx.beginPath(); ctx.roundRect(player.x-bw/2,player.y-42,bw,22,10); ctx.fill(); ctx.stroke(); ctx.fillStyle='#000'; ctx.font='11px sans-serif'; ctx.fillText(player.chat,player.x-bw/2+7,player.y-27); } if(player.dead){ ctx.font='20px serif'; ctx.fillText('💀',player.x-7,player.y+5); }
+  if(!HUMAN_CASTLE.dead){
+    ctx.fillStyle='#2a4a32'; ctx.fillRect(HUMAN_CASTLE.x,HUMAN_CASTLE.y,HUMAN_CASTLE.w,HUMAN_CASTLE.h);
+    ctx.font='80px serif'; ctx.fillText('🏰',HUMAN_CASTLE.x+140,HUMAN_CASTLE.y+180);
+    ctx.fillStyle='#0006'; ctx.fillRect(HUMAN_CASTLE.x+80,HUMAN_CASTLE.y-20,200,10);
+    ctx.fillStyle='#4caf50'; ctx.fillRect(HUMAN_CASTLE.x+80,HUMAN_CASTLE.y-20,200*(HUMAN_CASTLE.hp/HUMAN_CASTLE.maxHp),10);
+  }
+  if(!DEMON_CASTLE.dead){
+    ctx.fillStyle='#3a1a1a'; ctx.fillRect(DEMON_CASTLE.x,DEMON_CASTLE.y,DEMON_CASTLE.w,DEMON_CASTLE.h);
+    ctx.font='80px serif'; ctx.fillText('🌋',DEMON_CASTLE.x+140,DEMON_CASTLE.y+180);
+    ctx.fillStyle='#0006'; ctx.fillRect(DEMON_CASTLE.x+80,DEMON_CASTLE.y-20,200,10);
+    ctx.fillStyle='#ff3b3b'; ctx.fillRect(DEMON_CASTLE.x+80,DEMON_CASTLE.y-20,200*(DEMON_CASTLE.hp/DEMON_CASTLE.maxHp),10);
+  }
+
+  towers.forEach(t=>{
+    if(!t.dead){
+      ctx.font='40px serif'; ctx.fillText(t.emoji,t.x-20,t.y+15);
+      ctx.fillStyle='#0006'; ctx.fillRect(t.x-20,t.y-30,40,6);
+      ctx.fillStyle=t.faction==='human'?'#4caf50':'#ff3b3b'; ctx.fillRect(t.x-20,t.y-30,40*(t.hp/t.maxHp),6);
+    }
+  });
+
+  npcs.forEach(n=>{
+    ctx.font='20px serif'; ctx.fillText(n.emoji,n.x-10,n.y+8);
+    if(n.chatT>0){ ctx.fillStyle='#fff'; ctx.font='10px sans-serif'; ctx.fillText(n.chat,n.x-10,n.y-15); }
+  });
+
+  [...guards,...demonGuards].forEach(g=>{
+    if(!g.dead){
+      ctx.font='22px serif'; ctx.fillText(g.emoji,g.x-11,g.y+8);
+      ctx.fillStyle='#0006'; ctx.fillRect(g.x-15,g.y-20,30,5);
+      ctx.fillStyle=g.faction==='human'?'#4caf50':'#ff3b3b'; ctx.fillRect(g.x-15,g.y-20,30*(g.hp/g.maxHp),5);
+    }
+  });
+
+  enemies.forEach(en=>{
+    if(!en.dead){
+      ctx.font=en.isDragon?'90px serif':en.isMiniDragon?'40px serif':'26px serif';
+      ctx.fillText(en.emoji,en.x-(en.isDragon?45:en.isMiniDragon?20:13),en.y+(en.isDragon?30:en.isMiniDragon?15:10));
+      let bw=en.isDragon?100:en.isMiniDragon?40:30;
+      ctx.fillStyle='#0006'; ctx.fillRect(en.x-bw/2,en.y-(en.isDragon?60:en.isMiniDragon?30:20),bw,5);
+      ctx.fillStyle='#ff5252'; ctx.fillRect(en.x-bw/2,en.y-(en.isDragon?60:en.isMiniDragon?30:20),bw*(en.hp/en.maxHp),5);
+      if(en.isDragon && en.enraged){ ctx.fillStyle='#ff0000'; ctx.font='14px sans-serif'; ctx.fillText('😡 ENRAGED',en.x-40,en.y-70); }
+    }
+  });
+
+  projectiles.forEach(pr=>{
+    ctx.font='20px serif'; ctx.fillText(pr.emoji,pr.x-10,pr.y+8);
+  });
+
+  Object.values(remotePlayers).forEach(rp=>{
+    if(!rp.dead){
+      ctx.font='24px serif';
+      ctx.fillText(CLASS_DATA[rp.cls].emoji,rp.x-12,rp.y+6);
+      ctx.fillStyle='#0006'; ctx.fillRect(rp.x-15,rp.y-22,30,5);
+      ctx.fillStyle=rp.faction==='human'?'#4caf50':'#ff3b3b'; ctx.fillRect(rp.x-15,rp.y-22,30*(rp.hp/rp.maxHp),5);
+      ctx.fillStyle='#fff'; ctx.font='10px sans-serif'; ctx.fillText(rp.name,rp.x-15,rp.y-28);
+      if(rp.chatT>0&&rp.chat){
+        ctx.fillStyle='#ffffffee'; ctx.strokeStyle='#000'; ctx.lineWidth=1.5;
+        let bw=Math.min(120,ctx.measureText(rp.chat).width+16);
+        ctx.beginPath(); ctx.roundRect(rp.x-bw/2,rp.y-40,bw,20,8);
+        ctx.fill(); ctx.stroke();
+        ctx.fillStyle='#000'; ctx.font='10px sans-serif'; ctx.fillText(rp.chat,rp.x-bw/2+4,rp.y-28);
+      }
+    }
+  });
+
+  if(!player.dead){
+    if(player.buffT>0){ ctx.fillStyle='#ffd54f44'; ctx.beginPath(); ctx.arc(player.x,player.y,30,0,Math.PI*2); ctx.fill(); }
+    ctx.font='24px serif'; ctx.fillText(CLASS_DATA[player.cls].emoji,player.x-12,player.y+6);
+    ctx.fillStyle='#fff'; ctx.font='10px sans-serif'; ctx.fillText(playerName,player.x-15,player.y-28);
+    if(player.chatT>0&&player.chat){
+      ctx.fillStyle='#ffffffee'; ctx.strokeStyle='#000'; ctx.lineWidth=1.5;
+      let bw=Math.min(120,ctx.measureText(player.chat).width+16);
+      ctx.beginPath(); ctx.roundRect(player.x-bw/2,player.y-40,bw,20,8);
+      ctx.fill(); ctx.stroke();
+      ctx.fillStyle='#000'; ctx.font='10px sans-serif'; ctx.fillText(player.chat,player.x-bw/2+4,player.y-28);
+    }
+  }
+
+  for(let i=effects.length-1;i>=0;i--){
+    let e=effects[i]; e.t--;
+    if(e.type==='slash'){ ctx.strokeStyle='#fff'; ctx.lineWidth=3; ctx.beginPath(); ctx.arc(e.x,e.y,e.r*(1-e.t/12),player.facing-1,player.facing+1); ctx.stroke(); }
+    else if(e.type==='dash'){ ctx.strokeStyle='#ffffff88'; ctx.lineWidth=8; ctx.beginPath(); ctx.moveTo(e.x,e.y); ctx.lineTo(e.x2,e.y2); ctx.stroke(); }
+    else if(e.type==='aoe'){ ctx.fillStyle=e.col+'44'; ctx.beginPath(); ctx.arc(e.x,e.y,e.r*(1-e.t/30),0,Math.PI*2); ctx.fill(); }
+    else if(e.type==='explosion'){ ctx.fillStyle=e.col+(e.t%10<5?'88':'44'); ctx.beginPath(); ctx.arc(e.x,e.y,e.r,0,Math.PI*2); ctx.fill(); }
+    else if(e.type==='dmg'){ ctx.fillStyle=e.col||'#fff'; ctx.font='bold 16px sans-serif'; ctx.fillText(e.txt,e.x-10,e.y-20+(e.t/30)*20); }
+    if(e.t<=0) effects.splice(i,1);
+  }
+
   ctx.restore();
-}
 
-function updateBars(){
-  try{
-    let hpPct=Math.max(0,Math.min(100,(player.hp/player.maxHp)*100));
-    let mpPct=Math.max(0,Math.min(100,(player.mp/player.maxMp)*100));
-    document.getElementById('hpFill').style.width=hpPct+'%';
-    document.getElementById('mpFill').style.width=mpPct+'%';
-    document.getElementById('hpTxt').textContent=Math.floor(player.hp)+'/'+Math.floor(player.maxHp);
-    document.getElementById('goldTxt').textContent='💰'+Math.floor(player.gold);
-    document.getElementById('lvTxt').textContent=player.level;
-    document.getElementById('questChip').textContent='📜 Kill '+quest.current+'/'+quest.target;
-  }catch(e){}
-}
-
-function drawMinimap(){
-  if(!mctx) return;
   mctx.fillStyle='#111'; mctx.fillRect(0,0,160,120);
-  let scX=160/WORLD.w, scY=120/WORLD.h;
-  mctx.fillStyle='#4caf50'; mctx.fillRect(HUMAN_CITY.x*scX, HUMAN_CITY.y*scY, HUMAN_CITY.w*scX, HUMAN_CITY.h*scY);
-  mctx.fillStyle='#ff3b3b'; mctx.fillRect(DEMON_CITY.x*scX, DEMON_CITY.y*scY, DEMON_CITY.w*scX, DEMON_CITY.h*scY);
-  mctx.fillStyle='#4a8ac6'; rivers.forEach(r=>mctx.fillRect(r.x*scX,r.y*scY,r.w*scX,r.h*scY));
-  mctx.fillStyle='#ffcc00'; mctx.beginPath(); mctx.arc(player.x*scX,player.y*scY,3,0,Math.PI*2); mctx.fill();
-  Object.values(remotePlayers).forEach(rp=>{ mctx.fillStyle=rp.faction==='demon'?'#ff7a7a':'#7aff7a'; mctx.beginPath(); mctx.arc(rp.x*scX,rp.y*scY,2.5,0,Math.PI*2); mctx.fill(); });
+  let mw=160/WORLD.w, mh=120/WORLD.h;
+  mctx.fillStyle='#3b82ff'; mctx.fillRect(2900*mw,0,200*mw,120);
+  mctx.fillStyle='#4caf50'; mctx.fillRect(HUMAN_CASTLE.x*mw,HUMAN_CASTLE.y*mh,HUMAN_CASTLE.w*mw,HUMAN_CASTLE.h*mh);
+  mctx.fillStyle='#ff3b3b'; mctx.fillRect(DEMON_CASTLE.x*mw,DEMON_CASTLE.y*mh,DEMON_CASTLE.w*mw,DEMON_CASTLE.h*mh);
+  mctx.fillStyle='#ff0'; mctx.fillRect(player.x*mw-2,player.y*mh-2,4,4);
+  Object.values(remotePlayers).forEach(rp=>{ if(!rp.dead){ mctx.fillStyle=rp.faction==='human'?'#fff':'#f88'; mctx.fillRect(rp.x*mw-1,rp.y*mh-1,2,2); }});
 }
 
-function showMsg(t){ let m=document.getElementById('msg'); document.getElementById('msgTxt').textContent=t; m.classList.add('on'); }
-function hideMsg(){ document.getElementById('msg').classList.remove('on'); }
-function openM(id){ document.querySelectorAll('.modal').forEach(m=>m.classList.remove('on')); document.getElementById('m'+id.charAt(0).toUpperCase()+id.slice(1))?.classList.add('on'); if(id==='roomList') refreshRooms(); }
-function closeM(id){ document.getElementById('m'+id.charAt(0).toUpperCase()+id.slice(1))?.classList.remove('on'); }
+function gameLoop(){
+  update();
+  draw();
+  requestAnimationFrame(gameLoop);
+}
 
-window.addEventListener('load',()=>{
+window.onload = () => {
   calcView();
-  window.addEventListener('resize',calcView);
-  canvas=document.getElementById('game'); ctx=canvas.getContext('2d');
-  mcanvas=document.getElementById('minimap'); mctx=mcanvas.getContext('2d');
-
-  window.addEventListener('keydown',e=>{
-    keys[e.key.toLowerCase()]=true;
-    if(e.key==='Enter') openChat();
-    if(e.key===' ') doAttack();
+  canvas = document.getElementById('game');
+  ctx = canvas.getContext('2d');
+  mcanvas = document.getElementById('minimap');
+  mctx = mcanvas.getContext('2d');
+  
+  window.addEventListener('keydown', e => keys[e.key.toLowerCase()] = true);
+  window.addEventListener('keyup', e => keys[e.key.toLowerCase()] = false);
+  
+  let jWrap = document.getElementById('joystickWrap');
+  let jStick = document.getElementById('joystickStick');
+  jWrap.addEventListener('pointerdown', e => {
+    joystick.active = true;
+    let rect = jWrap.getBoundingClientRect();
+    joystick.startX = rect.left + rect.width/2;
+    joystick.startY = rect.top + rect.height/2;
+    updateJoystick(e);
   });
-  window.addEventListener('keyup',e=>{ keys[e.key.toLowerCase()]=false; });
-
-  let jWrap=document.getElementById('joystickWrap');
-  let jStick=document.getElementById('joystickStick');
-  let jActive=false; let jId=null;
-  jWrap.addEventListener('pointerdown',e=>{
-    jActive=true; jId=e.pointerId; jWrap.setPointerCapture(jId);
-    let rect=jWrap.getBoundingClientRect();
-    joystick.startX=rect.left+rect.width/2; joystick.startY=rect.top+rect.height/2;
-    updateJoystick(e.clientX, e.clientY);
-  });
-  jWrap.addEventListener('pointermove',e=>{
-    if(!jActive || e.pointerId!==jId) return;
-    updateJoystick(e.clientX, e.clientY);
-  });
-  jWrap.addEventListener('pointerup',e=>{
-    if(e.pointerId!==jId) return;
-    jActive=false; joystick.active=false; joystick.dx=0; joystick.dy=0;
-    jStick.style.transform=`translate(0px, 0px)`;
-  });
-
-  function updateJoystick(x, y){
-    let dx=x - joystick.startX; let dy=y - joystick.startY;
-    let dist=Math.sqrt(dx*dx+dy*dy); let maxR=48;
-    if(dist>maxR){ dx=(dx/dist)*maxR; dy=(dy/dist)*maxR; }
-    jStick.style.transform=`translate(${dx}px, ${dy}px)`;
-    joystick.active=true; joystick.dx=dx/maxR; joystick.dy=dy/maxR;
+  window.addEventListener('pointermove', e => { if(joystick.active) updateJoystick(e); });
+  window.addEventListener('pointerup', e => { joystick.active = false; joystick.dx=0; joystick.dy=0; jStick.style.transform = 'translate(0px,0px)'; });
+  function updateJoystick(e){
+    let dx = e.clientX - joystick.startX;
+    let dy = e.clientY - joystick.startY;
+    let dist = Math.sqrt(dx*dx+dy*dy);
+    let maxDist = 48;
+    if(dist>maxDist){ dx = (dx/dist)*maxDist; dy = (dy/dist)*maxDist; }
+    joystick.dx = dx/maxDist; joystick.dy = dy/maxDist;
+    jStick.style.transform = `translate(${dx}px, ${dy}px)`;
   }
+  
+  document.getElementById('bAtk').addEventListener('pointerdown', doAttack);
+  document.getElementById('bSkill').addEventListener('pointerdown', doSkill);
+  document.getElementById('bAct').addEventListener('pointerdown', doAct);
+  window.addEventListener('resize', calcView);
+  
+  refreshRooms();
+  requestAnimationFrame(gameLoop);
+}
 
-  document.getElementById('bAtk').addEventListener('pointerdown',doAttack);
-  document.getElementById('bSkill').addEventListener('pointerdown',doSkill);
-  document.getElementById('bAct').addEventListener('pointerdown',doAct);
-
-  initGame();
-  function loop(){
-    update();
-    if(gameState==='PLAYING'){ draw(); drawMinimap(); }
-    requestAnimationFrame(loop);
-  }
-  requestAnimationFrame(loop);
-});
+function openM(id){ document.querySelectorAll('.modal').forEach(m=>m.classList.remove('on')); document.getElementById('m'+id.charAt(0).toUpperCase()+id.slice(1)).classList.add('on'); }
+function closeM(id){ document.getElementById('m'+id.charAt(0).toUpperCase()+id.slice(1)).classList.remove('on'); }
+function showMsg(txt){ document.getElementById('msgTxt').textContent=txt; document.getElementById('msg').classList.add('on'); setTimeout(hideMsg,3000); }
+function hideMsg(){ document.getElementById('msg').classList.remove('on'); }
+function updateBars(){
+  document.getElementById('hpFill').style.width=(player.hp/player.maxHp*100)+'%';
+  document.getElementById('mpFill').style.width=(player.mp/player.maxMp*100)+'%';
+  document.getElementById('hpTxt').textContent = Math.floor(player.hp)+'/'+player.maxHp;
+  document.getElementById('goldTxt').textContent = '💰'+Math.floor(player.gold);
+  document.getElementById('lvTxt').textContent = player.level;
+  document.getElementById('questChip').textContent = '📜 Kill '+quest.current+'/'+quest.target;
+  document.getElementById('invGold').textContent = Math.floor(player.gold);
+  document.getElementById('invKills').textContent = player.kills;
+}
 </script>
 </body>
 </html>
