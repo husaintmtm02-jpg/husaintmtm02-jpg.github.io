@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Klik Koin Sederhana</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 50px;
+        }
+        .game-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+        h1 {
+            color: #333;
+        }
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2ecc71;
+            margin: 20px 0;
+        }
+        .click-btn {
+            background-color: #f1c40f;
+            border: none;
+            color: white;
+            padding: 20px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px #d4ac0d;
+            transition: all 0.1s ease;
+        }
+        .click-btn:active {
+            box-shadow: 0 1px #d4ac0d;
+            transform: translateY(4px);
+        }
+        .reset-btn {
+            margin-top: 20px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>Pencet Koinnya!</h1>
+        <div class="score">Skor Kamu: <span id="score-text">0</span></div>
+        <button class="click-btn" onclick="tambahSkor()">🪙 KLIK DISINI</button>
+        <br>
+        <button class="reset-btn" onclick="resetSkor()">Reset Game</button>
+    </div>
+
+    <script>
+        // Logika Game
+        let skor = 0;
+        const scoreText = document.getElementById('score-text');
+
+        function tambahSkor() {
+            skor = skor + 1;
+            scoreText.innerText = skor;
+        }
+
+        function resetSkor() {
+            skor = 0;
+            scoreText.innerText = skor;
+        }
+    </script>
+
+</body>
+</html>
